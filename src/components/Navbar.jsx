@@ -5,6 +5,7 @@ import NavbarSearch from "./NavbarSearch"
 import NavbarMenu from "./NavbarMenu"
 import RegistrationForm from "./RegistrationForm"
 import NavbarPopUp from "./NavbarPopUp"
+import Logo from "./Logo"
 
 function Navbar() {
 
@@ -17,7 +18,7 @@ function Navbar() {
   return (
     <div>
       <div>
-        <span>Logo</span>
+        <Logo/>
         <NavbarSearch onExplore={()=>{return (setIsExplore(!isExplore),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}/>
         <NavbarIcons onIconsClick={(stateIcons)=>{return (setIsExplore(false),setMessageIcon(stateIcons))}}/>
       </div>
