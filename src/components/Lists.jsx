@@ -1,4 +1,4 @@
-function Lists({content}) {
+function Lists({content=[],links=[]}) {
   return (
     content.map((item,index)=>{
       return(
