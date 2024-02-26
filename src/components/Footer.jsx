@@ -1,7 +1,7 @@
 import Explore from "./ExploreCategories";
 import ButtomBar from "./ButtomBar";
 import LoginFooterBar from "./LoginFooterBar";
-import './index.css';
+import '../index.css';
 
 
 

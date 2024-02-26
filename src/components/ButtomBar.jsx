@@ -1,10 +1,10 @@
 import SocialMedia from "./SocialMedia"
 import Logo from "./Logo";
-import './index.css'
+import '../index.css'
 function ButtomBar() {
   return (
     <div className="footer-bar">
-        <Logo/>
+        <Logo height={70}/>
         <p>&copy; 2000-2024, All Rights Reserved.</p>
         <SocialMedia/>
         
