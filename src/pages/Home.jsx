@@ -5,7 +5,6 @@ function Home() {
   return (
     <>
       <Navbar/>
-      <RegistrationForm/>
     </>
   )
 }
