@@ -1,7 +1,10 @@
 import { useState } from "react"
 import Boton from "./Boton"
+import Inputs from "./Inputs"
 
 function RegistrationForm() {
+
+  const [isRegistrationOpen, setIsRegistrationOpen]=useState(true)
 
   const [newUserData,setNewUserData] = useState({
     email: "",
@@ -10,11 +13,13 @@ function RegistrationForm() {
     confirmPassword: "",
   })
 
-  function handleUserEmail(event) {
-    setNewUserData({email:event.target.value})
+  function handleUserData(event) {
+    name = event.target.name
+    setNewUserData((prev)=>{return ({...prev,[name]:event.target.value})})
+    console.log(event.target.value)
   }
 
-  function handleClick() {
+  function handleClickSubmitForm() {
     console.log('enviado')
   }
 
@@ -23,24 +28,19 @@ function RegistrationForm() {
   }
 
   return (
-    <div>
+    isRegistrationOpen && <div>
+      <div>
         <h3>Registration</h3>
-        <button>Close</button>
+        <Boton text="close" callback={()=>{setIsRegistrationOpen(false)}} isDisabled={false}/>
         <form onSubmit={handleRegistrationSubmit}>
-            <label htmlFor="email">Email: </label>
-            <input type="email" name="email"  value = {newUserData.email} onChange={handleUserEmail}/>
-            <label htmlFor="confirm-email">Confirm Email: </label>
-            <input type="email" name="confirm-email" />
-            <label htmlFor="password">Password: </label>
-            <input type="password" name="password"  />
-            <label htmlFor="confirm-password">Confirm Password: </label>
-            <input type="password" name="confirm-password" />
+            <Inputs labelText={"Email"} name={"email"} type="email" dataInput={newUserData.email} handler={handleUserData} placeholder="user@example.com"/>
+            <Inputs labelText={"Confirm Email"} name={"confirmEmail"} type="email" dataInput={newUserData.confirmEmail} handler={handleUserData} placeholder="user@example.com"/>
+            <Inputs labelText={"Password"} name={"password"} type="password" dataInput={newUserData.password} handler={handleUserData}/>
+            <Inputs labelText={"Confirm Password"} name={"confirmPassword"} type="password" dataInput={newUserData.confirmPassword} handler={handleUserData}/>
             <p>Minimum 8 characters containing 2 of the following: Capital Letter, Lowercase Letter, Number, Special Character !@#$%^&*{"()"}-=+|:;\',{"<"}.{">"}</p>
-            <Boton callback={()=>handleClick()} text="Hola mundo" isDisabled={!newUserData.email}/>
+            <Boton callback={()=>handleClickSubmitForm()} text="Log in" isDisabled={!newUserData.email}/>
         </form>
-        {/* <div onClick={()=>{return (setIsExplore(false),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}>
-          {isMessageIcon.isUser && <NavbarPopUp content={["Sign in","Not Registered?","Sign Up"]} onClick={(e)=>e.stopPropagation()}/>}
-        </div> */}
+      </div>
     </div>
   )
 }

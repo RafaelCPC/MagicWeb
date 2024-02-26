@@ -1,4 +1,4 @@
-function Boton({callback,text,isDisabled,className}) {
+function Boton({callback,text,isDisabled,className=""}) {
 
   return (
     <button onClick={callback} disabled={isDisabled} className={className}> 
