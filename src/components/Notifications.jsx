@@ -14,7 +14,6 @@ function Notifications({isOpen,setOpen}) {
     function handleNotificationClick(id){
         setContentNotifications((prev)=>prev.map(item=>item.id==id?({...item,["isRead"]:true,["toggle"]:!item.toggle}):{...item}))
     }
-    console.log(contentNotifications)
     
     function handleDeleteNotification(id) {
         setContentNotifications((prev)=>prev.filter(item=>item.id!==id))
