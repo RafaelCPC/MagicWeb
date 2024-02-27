@@ -43,7 +43,7 @@ function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications})
                     {notification.isRead?<p>notification Read</p>:<p>notification not Read</p>}
                     <Lists content={notification.titleAndText}/>
                     {notification.toggle && <p>{notification.content}</p>}
-                    <Boton className="svg-delete-notifications" text={"Delete"} callback={()=>handleDeleteNotification(notification.id)}/>
+                    <Boton className="svg-delete-item" text={"Delete"} callback={()=>handleDeleteNotification(notification.id)}/>
                 </div>
                 )
             })
