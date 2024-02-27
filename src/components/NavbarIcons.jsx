@@ -1,3 +1,5 @@
+import Boton from "./Boton"
+
 function NavbarIcons({onIconsClick}) {
 
   function handleIconClick(stateIcons) {
@@ -7,10 +9,10 @@ function NavbarIcons({onIconsClick}) {
   
   return (
     <div>
-      <button onClick={()=>handleIconClick({isNotifications:true,isCart:false,isUser:false,isMenu:false})}>notifications</button>
-      <button onClick={()=>handleIconClick({isNotifications:false,isCart:true,isUser:false,isMenu:false})}>cart</button>
-      <button onClick={()=>handleIconClick({isNotifications:false,isCart:false,isUser:true,isMenu:false})}>user</button>
-      <button onClick={()=>handleIconClick({isNotifications:false,isCart:false,isUser:false,isMenu:true})}>menu</button>
+      <Boton callback={()=>handleIconClick({isNotifications:true,isCart:false,isUser:false,isMenu:false})} text="Notifications"/>
+      <Boton callback={()=>handleIconClick({isNotifications:false,isCart:true,isUser:false,isMenu:false})} text="Cart"/>
+      <Boton callback={()=>handleIconClick({isNotifications:false,isCart:false,isUser:true,isMenu:false})} text="User"/>
+      <Boton callback={()=>handleIconClick({isNotifications:false,isCart:false,isUser:false,isMenu:true})} text="Menu"/>
     </div>
     
   )

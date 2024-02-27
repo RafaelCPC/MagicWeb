@@ -2,11 +2,14 @@ import { useState } from "react"
 import Explore from "./Explore"
 import NavbarIcons from "./NavbarIcons"
 import NavbarSearch from "./NavbarSearch"
-import NavbarMenu from "./NavbarMenu"
+import NavbarMenu from "./Menu"
 import RegistrationForm from "./RegistrationForm"
 import NavbarPopUp from "./NavbarPopUp"
 import Logo from "./Logo"
 import Boton from "./Boton"
+import Notifications from "./Notifications"
+import Cart from "./Cart"
+import Login from "./Login"
 
 function Navbar() {
 
@@ -24,12 +27,11 @@ function Navbar() {
   return (
     <div>
       <div>
-        <Logo/>
+        <Logo height={50}/>
         <NavbarSearch onExplore={()=>{return (setIsExplore(!isExplore),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}/>
         <NavbarIcons onIconsClick={(stateIcons)=>{return (setIsExplore(false),setMessageIcon(stateIcons))}}/>
       </div>
       <div onClick={()=>{return (setIsExplore(false),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}>
-
         {isExplore && <Explore />}
         {isMessageIcon.isNotifications && <NavbarPopUp content={["There are no notifications today!",<Boton text={"See Notifications"} callback={()=>setOpenNotifications(true)}/>]} onClick={(e)=>e.stopPropagation()}/>}
         {isMessageIcon.isCart && <NavbarPopUp content={["You have 3 items in your Cart",<Boton text={"See Cart"} callback={()=>setOpenCart(true)}/>]} onClick={(e)=>e.stopPropagation()}/>}
@@ -37,10 +39,10 @@ function Navbar() {
         {(isUserLoggedIn && isMessageIcon.isMenu) && <NavbarMenu onClick={(e)=>e.stopPropagation()}/>}
       </div>
       
-      {/* {openNotifications && <RegistrationForm setOpen={()=>setOpenNotifications(false)}/>}
-      {openCart && <RegistrationForm setOpen={()=>setOpenCart(false)}/>} */}
-      {/* {openLogIn && <RegistrationForm setOpen={()=>setOpenLogIn(false)}/>} */}
-      {openRegistration && <RegistrationForm setOpen={()=>setOpenRegistration(false)}/>}
+      {openNotifications && <Notifications isOpen={true} setOpen={()=>setOpenNotifications(false)}/>}
+      {openCart && <Cart isOpen={true} setOpen={()=>setOpenCart(false)}/>} 
+      {openLogIn && <Login isOpen={true} setOpen={()=>setOpenLogIn(false)}/>}
+      {openRegistration && <RegistrationForm isOpen={true} setOpen={()=>setOpenRegistration(false)}/>}
 
     </div>
   )

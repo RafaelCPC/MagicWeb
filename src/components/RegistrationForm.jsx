@@ -2,9 +2,7 @@ import { useState } from "react"
 import Boton from "./Boton"
 import Inputs from "./Inputs"
 
-function RegistrationForm({setOpen}) {
-
-  const [isRegistrationOpen, setIsRegistrationOpen]=useState(true)
+function RegistrationForm({isOpen,setOpen}) {
 
   const [newUserData,setNewUserData] = useState({
     email: "",
@@ -28,7 +26,7 @@ function RegistrationForm({setOpen}) {
   }
 
   return (
-    isRegistrationOpen && <div>
+    isOpen && <div>
       <div>
         <h3>Registration</h3>
         <Boton text="close" callback={()=>{setOpen()}} isDisabled={false}/>
