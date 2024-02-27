@@ -14,9 +14,11 @@ import { initNotifications, initContentCart } from "./NavbarData"
 
 function Navbar() {
 
+  const [isUserLoggedIn,setIsUserLoggedIn] = useState(false)
+
   const [isExplore,setIsExplore] = useState(false)
   const [isMessageIcon, setMessageIcon] = useState({isNotifications:false,isCart:false,isUser:false,isMenu:false})
-  const [isUserLoggedIn,setIsUserLoggedIn] = useState(false)
+  
 
   const [openNotifications, setOpenNotifications] = useState(false) 
   const [openCart, setOpenCart] = useState(false) 
