@@ -15,8 +15,8 @@ function Explore() {
   return (
     <ul className="Footer-explore">
       {exploreCategories.map((category) => (
-        <li key={category.id}>
-          <h3>{category.name}</h3>
+        <li key={category.id} className="Explore-category">
+          <h3>{category.name} <span className="Arrow">&#9662;</span></h3>
           <Lists content={category.content} />
         </li>
       ))}
