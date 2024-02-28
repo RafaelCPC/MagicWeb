@@ -1,10 +1,12 @@
 import Lists from "./Lists"
 
-function NavbarPopUp({content,links}) {
+function NavbarPopUp({content,className}) {
 
   return (
-    <div>
-      <Lists content={content}/>
+    <div className="popup-overlay">
+      <div className={className}>
+        <Lists content={content}/>
+      </div>
     </div>
   )
 }

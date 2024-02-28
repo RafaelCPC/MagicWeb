@@ -1,3 +1,4 @@
+import CardsIcons from "./CardsIcons"
 import Lists from "./Lists"
 
 function Explore() {
@@ -21,20 +22,26 @@ function Explore() {
     ]
     
   return (
-    <>
-        <ul>
-            {
-            exploreCategories.map((category)=>{
-                return(
-                <li key={category.id}>
-                    <h3>{category.name}</h3>
-                    <Lists content={category.content}/>
-                </li>
-                )
-            })
-        }
-        </ul>
-    </>
+    <div className="search-explore-overlay">
+        <div className="search-explore-container" onClick={(e)=>e.stopPropagation()}>
+            <div>
+                <h2>Explore</h2>
+                <CardsIcons/>
+            </div>
+            <ul>
+                {
+                exploreCategories.map((category)=>{
+                    return(
+                    <li key={category.id}>
+                        <h3>{category.name}</h3>
+                        <Lists content={category.content}/>
+                    </li>
+                    )
+                })
+            }
+            </ul>
+        </div>
+    </div>
   )
 }
 

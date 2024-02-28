@@ -37,17 +37,19 @@ function Navbar() {
   
   
   return (
-    <div>
-      <div>
-        <Logo height={50}/>
+    <div className="navbar-container">
+      <div className="navbar">
+        <div className="logo-navbar">
+          <Logo height={42} />
+        </div>
         <NavbarSearch onExplore={()=>{return (setIsExplore(!isExplore),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}/>
         <NavbarIcons stateIcons={isMessageIcon} onIconsClick={(stateIcons)=>{return (setIsExplore(false),setMessageIcon(stateIcons))}}/>
       </div>
-      <div onClick={()=>{return (setIsExplore(false),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}>
+      <div className="elements-overlay" onClick={()=>{return (setIsExplore(false),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}>
         {isExplore && <Explore />}
-        {isMessageIcon.isNotifications && <NavbarPopUp content={[`You have ${numberOfNotifications?numberOfNotifications:"no"} unread notifications!`,<Boton text={"See Notifications"} callback={()=>{return (setOpenNotifications(true),setOpenCart(false),setOpenRegistration(false))}}/>]} onClick={(e)=>e.stopPropagation()}/>}
-        {isMessageIcon.isCart && <NavbarPopUp content={[`You have ${numberOfCartItems?numberOfCartItems:"no"} items in your Cart`,<Boton text={"See Cart"} callback={()=>{return (setOpenNotifications(false),setOpenCart(true),setOpenRegistration(false))}}/>]} onClick={(e)=>e.stopPropagation()}/>}
-        {isMessageIcon.isUser && <NavbarPopUp content={[<Boton text={"Sign in"} callback={()=>setOpenLogIn(true)}/>,"Not Registered?",<Boton text={"Sign Up"} callback={()=>{return (setOpenNotifications(false),setOpenCart(false),setOpenRegistration(true))}}/>]} onClick={(e)=>e.stopPropagation()}/>}
+        {isMessageIcon.isNotifications && <NavbarPopUp className="popup notifications-popup" content={[`You have ${numberOfNotifications?numberOfNotifications:"no"} unread notifications!`,<Boton text={"See Notifications"} callback={()=>{return (setOpenNotifications(true),setOpenCart(false),setOpenRegistration(false),setOpenLogIn(false))}}/>]} onClick={(e)=>e.stopPropagation()}/>}
+        {isMessageIcon.isCart && <NavbarPopUp className="popup cart-popup" content={[`You have ${numberOfCartItems?numberOfCartItems:"no"} items in your Cart!`,<Boton text={"See Cart"} callback={()=>{return (setOpenNotifications(false),setOpenCart(true),setOpenRegistration(false),setOpenLogIn(false))}}/>]} onClick={(e)=>e.stopPropagation()}/>}
+        {isMessageIcon.isUser && <NavbarPopUp className="popup user-popup" content={[<Boton text={"Sign in"} callback={()=>setOpenLogIn(true)}/>,"Not Registered?",<Boton text={"Sign Up"} callback={()=>{return (setOpenNotifications(false),setOpenCart(false),setOpenRegistration(true),setOpenLogIn(false))}}/>]} onClick={(e)=>e.stopPropagation()}/>}
         {(isUserLoggedIn && isMessageIcon.isMenu) && <NavbarMenu onClick={(e)=>e.stopPropagation()}/>}
       </div>
       

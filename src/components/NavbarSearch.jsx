@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Lupa from "./Lupa.JSX"
 
 function NavbarSearch({onExplore}) {
 
@@ -21,10 +22,13 @@ function NavbarSearch({onExplore}) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-        <input value={inputSearch} type="text" name="" id="" onClick={handleInputNavbarClick} onChange={handleInputNavbarChange}/>
-        <button type="submit" onClick={handleClickButtonSearch}></button>
+    <div className="navbar-search">
+      <form onSubmit={handleSubmit} className="form-navbar">
+        <input  className="input-search" value={inputSearch} type="text" name="" id="" onClick={handleInputNavbarClick} onChange={handleInputNavbarChange} placeholder="Search..."/>
+        <button type="submit" onClick={handleClickButtonSearch}><Lupa/></button>
     </form>
+    </div>
+    
   )
 }
 
