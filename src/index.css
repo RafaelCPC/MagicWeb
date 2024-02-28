@@ -151,6 +151,7 @@ button{
 }
 .search-explore-container>div>h2{
     margin: 0;
+    font-weight: 600;
 }
 
 .search-explore-container>div>svg{
