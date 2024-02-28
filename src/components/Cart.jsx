@@ -37,7 +37,7 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 
   return (
     isOpen && (
-		<div className="Cart Overlay">
+		<div className="sections-overlay cart-overlay">
 			<div>
 			<h3>Your Cart</h3>
 			<Boton text="close" callback={()=>setOpen()} isDisabled={false} />

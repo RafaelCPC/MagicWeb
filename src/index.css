@@ -11,6 +11,10 @@
     margin: 0;
     padding: 0;
     font-size: 1em;
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 body{
@@ -67,7 +71,6 @@ button{
 }
 
 .input-search{
-    font-family: "Noto Sans", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -181,6 +184,7 @@ button{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 500;
 }
 
 .search-explore-container>ul>li>div:hover{
@@ -241,4 +245,118 @@ button{
     font-weight: 600;
     line-height: normal;
     cursor: pointer;
+}
+
+.sections-overlay{
+    height: calc(100vh - 60px);
+    /* overflow-y: hidden; */
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+.sections-overlay>div{
+    display: flex;
+    width: 650px;
+    padding: 45px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border-radius: 12px;
+    background: var(--gradiente-select-menu);
+    background-size: cover;
+    background-blend-mode: lighten;
+    align-self: center;
+    
+}
+
+.notifications-menu>div{
+    display: flex;
+    height: 500px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    position: absolute;
+}
+
+.notifications-menu>div>div:first-child{
+    display: inline-flex;
+    justify-content: space-between;
+    align-self: stretch;
+    width: 100%;
+}
+
+.notifications-menu>div>div:first-child>h3{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: var(--gradiente-texto);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.notifications-menu>div>ul{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0 20px 
+}
+
+.notifications-menu>div>ul::-webkit-scrollbar{
+    width: 10px;
+    background: #8299ac;
+    border-radius: 5px;
+}
+
+.notifications-menu>div>ul::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: var(--background-color-dark);
+    border-radius: 5px;
+}
+
+.notifications-menu>div>ul>div{
+    width: 100%;
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 10px;
+    border-bottom: 1px solid var(--color-texto-secundario);
+}
+
+.notifications-menu>div>ul>div>div{
+    width: 100%;
+}
+
+.notifications-menu>div>ul>div>div>div:first-child{
+    font-size: 18px;
+}
+
+.notifications-menu>div>ul>div>div>div:nth-child(2){
+    font-size: 16px;
+    color: #ffda54;
+}
+
+.notifications-menu>div>ul>div>div>p{
+    font-size: 16px;
+    font-weight: 200;
+    margin-top: 5px;
+}
+
+.svg-delete-item{
+    display: flex;
+    align-items: center;
+    border: transparent solid 2px;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+}
+.svg-delete-item:hover{
+    border: #493131 solid 2px;
+    background-color: #912222;
+    padding: 5px;
 }

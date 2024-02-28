@@ -35,14 +35,19 @@ function Navbar() {
     }
   },[numberOfNotifications,numberOfCartItems])
   
-  
+  function CloseEverything() {
+    setIsExplore(!isExplore);
+    setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false});
+    setOpenNotifications(false);setOpenCart(false);setOpenLogIn(false);setOpenRegistration(false)
+  }
+
   return (
     <div className="navbar-container">
       <div className="navbar">
         <div className="logo-navbar">
           <Logo height={42} />
         </div>
-        <NavbarSearch onExplore={()=>{return (setIsExplore(!isExplore),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}/>
+        <NavbarSearch onExplore={()=>CloseEverything()}/>
         <NavbarIcons stateIcons={isMessageIcon} onIconsClick={(stateIcons)=>{return (setIsExplore(false),setMessageIcon(stateIcons))}}/>
       </div>
       <div className="elements-overlay" onClick={()=>{return (setIsExplore(false),setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}>

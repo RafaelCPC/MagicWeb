@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import Boton from "./Boton"
 import Lists from "./Lists"
+import NotificationRead from "./NotificationRead"
+import DeleteIcon from "./DeleteIcon"
+import CloseIcon from "./CloseIcon"
 
 function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications}) {
 
@@ -15,7 +18,6 @@ function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications})
     },[])
 
     useEffect(()=>{
-        console.log(contentNotifications[0])
         if(!!contentNotifications[0]){
             localStorage.setItem("notifications", JSON.stringify(contentNotifications));  
         }
@@ -31,19 +33,23 @@ function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications})
     }
 
   return (
-    isOpen && <div className="notifications-overlay">
+    isOpen && <div className="sections-overlay notifications-menu">
         <div>
-            <h3>Notifications</h3>
-            <Boton text="close" callback={()=>setOpen()} isDisabled={false}/>
+            <div>
+                <h3>Notifications</h3>
+                <Boton text={<CloseIcon/>} callback={()=>setOpen()} isDisabled={false}/>
+            </div>
             <ul>
             {
             contentNotifications.map((notification)=>{
                 return(
                 <div key={notification.id} onClick={()=>handleNotificationClick(notification.id)}>
-                    {notification.isRead?<p>notification Read</p>:<p>notification not Read</p>}
-                    <Lists content={notification.titleAndText}/>
-                    {notification.toggle && <p>{notification.content}</p>}
-                    <Boton className="svg-delete-item" text={"Delete"} callback={()=>handleDeleteNotification(notification.id)}/>
+                    {<NotificationRead read={notification.isRead}/>}
+                    <div>
+                        <Lists content={notification.titleAndText}/>
+                        {notification.toggle && <p>{notification.content}</p>}
+                    </div>
+                    <Boton className="svg-delete-item" text={<DeleteIcon/>} callback={()=>handleDeleteNotification(notification.id)}/>
                 </div>
                 )
             })
