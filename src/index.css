@@ -258,7 +258,7 @@ button{
 
 .sections-overlay>div{
     display: flex;
-    width: 650px;
+    width: 70%;
     padding: 45px;
     flex-direction: column;
     justify-content: center;
@@ -281,14 +281,14 @@ button{
     position: absolute;
 }
 
-.notifications-menu>div>div:first-child{
+.sections-overlay>div>div:first-child{
     display: inline-flex;
     justify-content: space-between;
     align-self: stretch;
     width: 100%;
 }
 
-.notifications-menu>div>div:first-child>h3{
+.sections-overlay>div>div:first-child>h3{
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -300,26 +300,26 @@ button{
     padding: 0 10px;
 }
 
-.notifications-menu>div>ul{
+.sections-overlay>div>ul{
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;
     padding: 0 20px 
 }
 
-.notifications-menu>div>ul::-webkit-scrollbar{
+.sections-overlay>div>ul::-webkit-scrollbar{
     width: 10px;
     background: #8299ac;
     border-radius: 5px;
 }
 
-.notifications-menu>div>ul::-webkit-scrollbar-thumb {
+.sections-overlay>div>ul::-webkit-scrollbar-thumb {
     width: 10px;
     background: var(--background-color-dark);
     border-radius: 5px;
 }
 
-.notifications-menu>div>ul>div{
+.sections-overlay>div>ul>div{
     width: 100%;
     display: flex;
     padding-bottom: 10px;
@@ -361,4 +361,46 @@ button{
     border: #493131 solid 2px;
     background-color: #912222;
     padding: 5px;
+}
+
+.cart-overlay>div{
+    height: 500px;
+    max-width: 650px;
+}
+
+.cart-overlay>div>div:last-child{
+    display: inline-flex;
+    justify-content: space-around;
+    align-self: stretch;
+    width: 100%;
+}
+
+.cart-overlay.sections-overlay>div>ul>div>div:first-of-type{
+    width: 250px;
+} 
+
+.cart-overlay.sections-overlay>div>ul>div>div:first-of-type>div:nth-child(2){
+    font-weight: 200;
+}
+.cart-overlay.sections-overlay>div>ul>div>div:first-of-type>div:nth-child(3){
+    font-weight: 200;
+}
+
+.cart-overlay.sections-overlay>div>ul>div>div:nth-of-type(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+} 
+
+.cart-overlay.sections-overlay>div>ul>div>div:nth-of-type(2)>button{
+    display: flex;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background-color: var(--background-color-dark);
+    font-family: monospace;
 }

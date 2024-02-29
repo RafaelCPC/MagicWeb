@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Boton from "./Boton";
 import Lists from "./Lists";
+import CloseIcon from "./CloseIcon";
+import DeleteIcon from "./DeleteIcon";
 
 
 function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
@@ -39,25 +41,29 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
     isOpen && (
 		<div className="sections-overlay cart-overlay">
 			<div>
-			<h3>Your Cart</h3>
-			<Boton text="close" callback={()=>setOpen()} isDisabled={false} />
-			<ul>
-				{contentCart.map((cartItem) => {
-				return (
-					<div key={cartItem.id}>
-						<p>imagen</p>
-						<Lists content={cartItem.content} />
-						<p>{(cartItem.price*cartItem.total).toFixed(2)} EUR</p>
-						<div>
-							<Boton text="+" callback={()=>handleIncreaseItem(cartItem.id)}/>
-							<p>{cartItem.total}</p>
-							<Boton text="-" callback={()=>handleDecreaseItem(cartItem.id)}/>
+				<div>
+					<h3>Your Cart</h3>
+					<Boton text={<CloseIcon/>} callback={()=>setOpen()} isDisabled={false} />
+				</div>
+				<ul>
+					{contentCart.map((cartItem) => {
+					return (
+						<div key={cartItem.id}>
+							<p>imagen</p>
+							<div>
+								<Lists content={cartItem.content} />
+							</div>
+							<p>{(cartItem.price*cartItem.total).toFixed(2)} EUR</p>
+							<div>
+								<Boton text="+" callback={()=>handleIncreaseItem(cartItem.id)}/>
+								<p>{cartItem.total}</p>
+								<Boton text="-" callback={()=>handleDecreaseItem(cartItem.id)}/>
+							</div>
+							<Boton className="svg-delete-item" text={<DeleteIcon/>} callback={() => handleDeleteCartItem(cartItem.id)}/>
 						</div>
-						<Boton className="svg-delete-item" text={"Delete"} callback={() => handleDeleteCartItem(cartItem.id)}/>
-					</div>
-				);
-				})}
-			</ul>
+					);
+					})}
+				</ul>
 			<div>
 				<Boton text={"Continue Shopping"}/>
 				<Boton text={"Checkout"}/>
