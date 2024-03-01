@@ -255,11 +255,12 @@ button{
     width: 100%; 
     display: flex;
     justify-content: center;
+    animation: visibility-div 400ms linear 10ms none;
 }
 
 .sections-overlay>div{
     display: flex;
-    width: 70%;
+    width: 800px;
     padding: 45px;
     flex-direction: column;
     justify-content: center;
@@ -273,6 +274,16 @@ button{
     margin-top: 75px;
     box-shadow: -1px -1px 20px 10px #20211f8c;
     border: solid 1px #ede3e36b;
+    z-index: 9999;
+}
+
+@keyframes visibility-div {
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
 }
 
 .notifications-menu>div{
@@ -451,4 +462,38 @@ button{
 .registration-overlay>div>form p{
     font-weight: 200;
     color: #ffda54;
+}
+
+.mana-elements-svg{
+    z-index: 0;
+}
+
+.mana-elements-svg>svg:first-child{
+    filter: drop-shadow(0px -4px 30px #98e46b82);
+    position: absolute;
+    top: 180px;
+    left: 50px;
+    opacity: 90%;
+    
+}
+.mana-elements-svg>svg:nth-child(2){
+    filter: drop-shadow(0px -10px 60px #6be4e482);
+    position: absolute;
+    top: 400px;
+    left: 30px;
+    opacity: 90%;
+}
+.mana-elements-svg>svg:nth-child(3){
+    filter: drop-shadow(10px -1px 60px #e373ff82);
+    position: absolute;
+    top: 390px;
+    right: 50px;
+    opacity: 90%;
+}
+.mana-elements-svg>svg:last-child{
+    filter: drop-shadow(0px 0px 40px #e4e26b82);
+    position: absolute;
+    top: 690px;
+    right: 60px;
+    opacity: 90%;
 }

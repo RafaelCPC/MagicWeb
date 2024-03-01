@@ -3,6 +3,7 @@ import Boton from "./Boton";
 import Lists from "./Lists";
 import CloseIcon from "./CloseIcon";
 import DeleteIcon from "./DeleteIcon";
+import ManaSvg from "./ManaSvg";
 
 
 function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
@@ -38,7 +39,7 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 
 
   return (
-    isOpen && (
+    isOpen && <>
 		<div className="sections-overlay cart-overlay">
 			<div>
 				<div>
@@ -70,7 +71,8 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 			</div>
 			</div>
 		</div>
-		)
+		<ManaSvg/>
+		</>
   );
 }
 

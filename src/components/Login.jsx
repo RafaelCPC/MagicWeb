@@ -2,6 +2,7 @@ import { useState } from "react"
 import Boton from "./Boton"
 import Inputs from "./Inputs"
 import CloseIcon from "./CloseIcon"
+import ManaSvg from "./ManaSvg"
 
 function Login({isOpen,setOpen}) {
 
@@ -24,7 +25,9 @@ function Login({isOpen,setOpen}) {
       }
 
     return (
-        isOpen && <div className="sections-overlay registration-overlay">
+        isOpen && 
+        <>
+        <div className="sections-overlay registration-overlay">
             <div>
                 <div>
                    <h3>Sign In</h3>
@@ -37,6 +40,8 @@ function Login({isOpen,setOpen}) {
                 </form>
             </div>
         </div>
+        <ManaSvg/>
+        </>
     )
 }
 

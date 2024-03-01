@@ -4,6 +4,7 @@ import Lists from "./Lists"
 import NotificationRead from "./NotificationRead"
 import DeleteIcon from "./DeleteIcon"
 import CloseIcon from "./CloseIcon"
+import ManaSvg from "./ManaSvg"
 
 function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications}) {
 
@@ -33,7 +34,8 @@ function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications})
     }
 
   return (
-    isOpen && <div className="sections-overlay notifications-menu">
+    isOpen && <>
+    <div className="sections-overlay notifications-menu">
         <div>
             <div>
                 <h3>Notifications</h3>
@@ -57,6 +59,8 @@ function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications})
             </ul>
         </div>
     </div>
+    <ManaSvg/>
+    </>
   )
 }
 
