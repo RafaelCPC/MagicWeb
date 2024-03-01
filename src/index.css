@@ -284,7 +284,7 @@ button{
     margin-top: 75px;
     box-shadow: -1px -1px 20px 10px #20211f8c;
     z-index: 9999;
-    animation: visibility-div 400ms ease-in 10ms;
+    animation: visibility-div 400ms ease-in 0ms;
 }
 
 @keyframes visibility-div {
