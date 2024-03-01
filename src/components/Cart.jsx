@@ -50,7 +50,7 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 					{contentCart.map((cartItem) => {
 					return (
 						<div key={cartItem.id}>
-							<p>imagen</p>
+							<img src={cartItem.img} alt={`card ${cartItem.content[0]}`} />
 							<div>
 								<Lists content={cartItem.content} />
 							</div>
