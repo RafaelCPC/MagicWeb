@@ -48,17 +48,18 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 				</div>
 				<ul>
 					{contentCart.map((cartItem) => {
+						{console.log(`${cartItem.url}`)}
 					return (
 						<div key={cartItem.id}>
-							<img src={cartItem.img} alt={`card ${cartItem.content[0]}`} />
+							<img src={cartItem.img} alt={`card ${cartItem.content[0]}`} width={80}/>
 							<div>
 								<Lists content={cartItem.content} />
 							</div>
 							<p>{(cartItem.price*cartItem.total).toFixed(2)} EUR</p>
 							<div>
-								<Boton text="+" callback={()=>handleIncreaseItem(cartItem.id)}/>
+								<Boton className="LoginFooterBar-button" text="+" callback={()=>handleIncreaseItem(cartItem.id)}/>
 								<p>{cartItem.total}</p>
-								<Boton text="-" callback={()=>handleDecreaseItem(cartItem.id)}/>
+								<Boton className="LoginFooterBar-button" text="-" callback={()=>handleDecreaseItem(cartItem.id)}/>
 							</div>
 							<Boton className="svg-delete-item" text={<DeleteIcon/>} callback={() => handleDeleteCartItem(cartItem.id)}/>
 						</div>

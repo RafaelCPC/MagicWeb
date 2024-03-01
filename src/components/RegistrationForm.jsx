@@ -41,7 +41,7 @@ function RegistrationForm({isOpen,setOpen}) {
               <Inputs labelText={"Password"} name={"password"} type="password" dataInput={newUserData.password} handler={handleUserData}/>
               <Inputs labelText={"Confirm Password"} name={"confirmPassword"} type="password" dataInput={newUserData.confirmPassword} handler={handleUserData}/>
               <p>Minimum 8 characters containing 2 of the following: Capital Letter, Lowercase Letter, Number, Special Character !@#$%^&*{"()"}-=+|:;\',{"<"}.{">"}</p>
-              <Boton callback={()=>handleClickSubmitForm()} text="Sign up" isDisabled={!newUserData.email}/>
+              <Boton className="LoginFooterBar-button" callback={()=>handleClickSubmitForm()} text="Sign up" isDisabled={!newUserData.email}/>
           </form>
         </div>
       </div>

@@ -270,7 +270,7 @@ button{
 
 .sections-overlay>div{
     display: flex;
-    max-width: 800px;
+    width: 800px;
     padding: 45px;
     flex-direction: column;
     justify-content: center;
@@ -478,23 +478,23 @@ button{
     filter: drop-shadow(0px -4px 30px #98e46b82);
     position: absolute;
     top: 180px;
-    left: 50px;
+    left: 100px;
 }
 .mana-elements-svg>svg:nth-child(2){
     filter: drop-shadow(0px -10px 60px #6be4e482);
     position: absolute;
     top: 400px;
-    left: 30px;
+    left: 140px;
 }
 .mana-elements-svg>svg:nth-child(3){
     filter: drop-shadow(10px -1px 60px #e373ff82);
     position: absolute;
     top: 390px;
-    right: 50px;
+    right: 140px;
 }
 .mana-elements-svg>svg:last-child{
     filter: drop-shadow(0px 0px 40px #e4e26b82);
     position: absolute;
     top: 690px;
-    right: 60px;
+    right: 250px;
 }

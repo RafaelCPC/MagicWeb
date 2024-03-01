@@ -36,7 +36,7 @@ function Login({isOpen,setOpen}) {
                 <form onSubmit={handleRegistrationSubmit}>
                     <Inputs labelText={"Email"} name={"email"} type="email" dataInput={newUserData.email} handler={handleUserData} placeholder="user@example.com"/>
                     <Inputs labelText={"Password"} name={"password"} type="password" dataInput={newUserData.password} handler={handleUserData}/>
-                    <Boton callback={()=>handleClickSubmitForm()} text="Log-in" isDisabled={!newUserData.email}/>
+                    <Boton className="LoginFooterBar-button" callback={()=>handleClickSubmitForm()} text="Log-in" isDisabled={!newUserData.email}/>
                 </form>
             </div>
         </div>
