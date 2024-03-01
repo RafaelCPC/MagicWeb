@@ -214,7 +214,17 @@ button{
     background-size: cover;
     margin: 5px;
     border-radius: 12px;
-    border: solid 1px #ede3e36b;
+    animation: popUp-traslate 500ms ease 0ms;
+}
+
+@keyframes popUp-traslate {
+    0%{
+        transform: translateY(-150px);
+        visibility: hidden;
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 .notifications-popup>div:first-child,.cart-popup>div:first-child,.user-popup>div:nth-child(2) {
@@ -255,12 +265,12 @@ button{
     width: 100%; 
     display: flex;
     justify-content: center;
-    animation: visibility-div 400ms linear 10ms none;
+    z-index: 9999;
 }
 
 .sections-overlay>div{
     display: flex;
-    width: 800px;
+    max-width: 800px;
     padding: 45px;
     flex-direction: column;
     justify-content: center;
@@ -273,8 +283,8 @@ button{
     align-self: center;
     margin-top: 75px;
     box-shadow: -1px -1px 20px 10px #20211f8c;
-    border: solid 1px #ede3e36b;
     z-index: 9999;
+    animation: visibility-div 400ms ease-in 10ms;
 }
 
 @keyframes visibility-div {
@@ -464,36 +474,27 @@ button{
     color: #ffda54;
 }
 
-.mana-elements-svg{
-    z-index: 0;
-}
-
 .mana-elements-svg>svg:first-child{
     filter: drop-shadow(0px -4px 30px #98e46b82);
     position: absolute;
     top: 180px;
     left: 50px;
-    opacity: 90%;
-    
 }
 .mana-elements-svg>svg:nth-child(2){
     filter: drop-shadow(0px -10px 60px #6be4e482);
     position: absolute;
     top: 400px;
     left: 30px;
-    opacity: 90%;
 }
 .mana-elements-svg>svg:nth-child(3){
     filter: drop-shadow(10px -1px 60px #e373ff82);
     position: absolute;
     top: 390px;
     right: 50px;
-    opacity: 90%;
 }
 .mana-elements-svg>svg:last-child{
     filter: drop-shadow(0px 0px 40px #e4e26b82);
     position: absolute;
     top: 690px;
     right: 60px;
-    opacity: 90%;
 }
