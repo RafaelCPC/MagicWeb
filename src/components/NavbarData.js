@@ -97,7 +97,7 @@ const initNotifications = [
 const initContentCart = [
   {
     id: "cart1",
-    img: "../public/cards/tarmogoyf-235.webp",
+    img: "../assets/cards/tarmogoyf-235.webp",
     content: ["Volcanic Island", "Usuario: Alice (SPA)", "Language: SPA"],
     price: 2.90,
     total: 1,
