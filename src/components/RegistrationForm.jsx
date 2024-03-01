@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Boton from "./Boton"
 import Inputs from "./Inputs"
+import CloseIcon from "./CloseIcon"
 
 function RegistrationForm({isOpen,setOpen}) {
 
@@ -26,10 +27,12 @@ function RegistrationForm({isOpen,setOpen}) {
   }
 
   return (
-    isOpen && <div>
+    isOpen && <div className="sections-overlay registration-overlay">
       <div>
-        <h3>Registration</h3>
-        <Boton text="close" callback={()=>{setOpen()}} isDisabled={false}/>
+        <div>
+          <h3>Sign Up</h3>
+          <Boton text={<CloseIcon/>} callback={()=>{setOpen()}} isDisabled={false}/>
+        </div>
         <form onSubmit={handleRegistrationSubmit}>
             <Inputs labelText={"Email"} name={"email"} type="email" dataInput={newUserData.email} handler={handleUserData} placeholder="user@example.com"/>
             <Inputs labelText={"Confirm Email"} name={"confirmEmail"} type="email" dataInput={newUserData.confirmEmail} handler={handleUserData} placeholder="user@example.com"/>

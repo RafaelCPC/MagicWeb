@@ -214,6 +214,7 @@ button{
     background-size: cover;
     margin: 5px;
     border-radius: 12px;
+    border: solid 1px #ede3e36b;
 }
 
 .notifications-popup>div:first-child,.cart-popup>div:first-child,.user-popup>div:nth-child(2) {
@@ -269,7 +270,9 @@ button{
     background-size: cover;
     background-blend-mode: lighten;
     align-self: center;
-    
+    margin-top: 75px;
+    box-shadow: -1px -1px 20px 10px #20211f8c;
+    border: solid 1px #ede3e36b;
 }
 
 .notifications-menu>div{
@@ -403,4 +406,49 @@ button{
     border-radius: 100px;
     background-color: var(--background-color-dark);
     font-family: monospace;
+}
+
+.registration-overlay>div{
+    position: absolute; 
+    max-width: 500px;
+}
+
+.registration-overlay>div>div:first-child>h3 {
+    padding: 0;
+}
+
+.registration-overlay>div>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    align-self: stretch;
+}
+
+.registration-overlay>div>form>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+.registration-overlay>div>form label{
+    align-self: flex-start;
+}
+
+.registration-overlay>div>form input{
+    height: 31px;
+    border-radius: 5px;
+    background: var(--background-color-dark);
+    color: var(--color-texto-secundario);
+    border: none;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.registration-overlay>div>form p{
+    font-weight: 200;
+    color: #ffda54;
 }
