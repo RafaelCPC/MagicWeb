@@ -48,7 +48,6 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 				</div>
 				<ul>
 					{contentCart.map((cartItem) => {
-						{console.log(`${cartItem.url}`)}
 					return (
 						<div key={cartItem.id}>
 							<img src={cartItem.img} alt={`card ${cartItem.content[0]}`} width={80}/>
