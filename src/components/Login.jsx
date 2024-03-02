@@ -4,7 +4,7 @@ import Inputs from "./Inputs"
 import CloseIcon from "./CloseIcon"
 import ManaSvg from "./ManaSvg"
 
-function Login({isOpen,setOpen}) {
+function Login({isOpen,setOpen,logged}) {
 
     const [newUserData,setNewUserData] = useState({
         email: "",
@@ -18,6 +18,8 @@ function Login({isOpen,setOpen}) {
     
       function handleClickSubmitForm() {
         console.log('enviado')
+        logged()
+        localStorage.setItem("userLogged", JSON.stringify(true));  
       }
     
       function handleRegistrationSubmit(e) {
