@@ -655,3 +655,7 @@ button{
     border-radius: 8px;
     background-color: var(--background-color-dark);
 }
+
+.section-main-content{
+    animation: visibility-div 400ms ease 0ms;
+}
