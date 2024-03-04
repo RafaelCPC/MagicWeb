@@ -10,11 +10,11 @@ function Home() {
   const [isExplore,setIsExplore] = useState(false)
   const [isMessageIcon, setMessageIcon] = useState({isNotifications:false,isCart:false,isUser:false,isMenu:false})
   const [isSectionOpen,setIsSectionOpen] = useState({
-    openNotifications:false,
-    openCart:false,
-    openLogIn:false,
-    openRegistration:false
-  })
+      openNotifications:false,
+      openCart:false,
+      openLogIn:false,
+      openRegistration:false
+    })
 
   const [numberOfNotifications,setNumberOfNotifications] = useState(initNotifications.filter(item=>item.isRead==false).length)
   const [numberOfCartItems,setNumberOfCartItems] = useState(initContentCart.length)

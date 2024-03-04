@@ -5,10 +5,10 @@ import UserMenuIcons from "./UserMenuIcons"
 function Menu({isOpen,logOut}) {
 
   const menuItems = [
-    {svg:"url",nombreItem:"Profile"},
-    {svg:"url",nombreItem:"Friends"},
-    {svg:"url",nombreItem:"Favorites"},
-    {svg:"url",nombreItem:"My Wallet",subItems:["Earnings","Pending","History"]},
+    {id:"item1",svg:"url",nombreItem:"Profile"},
+    {id:"item2",svg:"url",nombreItem:"Friends"},
+    {id:"item3",nombreItem:"Favorites"},
+    {id:"item4",nombreItem:"My Wallet",subItems:["Earnings","Pending","History"]},
   ]
 
   const [openSubMenu,setOpenSubMenu] = useState(false)
@@ -29,20 +29,17 @@ function Menu({isOpen,logOut}) {
           <ul>
               {
               menuItems.map((menuItem,index)=>{
-                  return(
-                    <>
-                    <div key={index}>
-                      <div className="user-menu-list-item"  onClick={()=>menuItem.subItems?setOpenSubMenu(!openSubMenu):setOpenSubMenu(openSubMenu)}>
-                      
-                        <UserMenuIcons index={index}/>
-                        <p>{menuItem.nombreItem}</p>
+                  return( 
+                      <div key={menuItem.id}>
+                        <div  className="user-menu-list-item"  onClick={()=>menuItem.subItems?setOpenSubMenu(!openSubMenu):setOpenSubMenu(openSubMenu)}>
+                        
+                          <UserMenuIcons index={index}/>
+                          <p>{menuItem.nombreItem}</p>
+                        </div>
+                          {(menuItem.subItems && openSubMenu) && <div className="user-menu-submenu">
+                            <Lists content={menuItem.subItems}/></div>
+                          }
                       </div>
-                        {(menuItem.subItems && openSubMenu) && <div className="user-menu-submenu">
-                          <Lists content={menuItem.subItems}/></div>
-                        }
-                    </div>
-                    
-                    </>
                   )
               })
               }
