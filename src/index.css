@@ -21,7 +21,7 @@ body{
     background-color: var(--background-color-dark);
     margin: 0;
     color: var(--color-texto-secundario);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 button{

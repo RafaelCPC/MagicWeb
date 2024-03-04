@@ -8,6 +8,7 @@ import ManaSvg from "./ManaSvg"
 
 function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications}) {
 
+
     const [contentNotifications,setContentNotifications] = useState([])
 
     useEffect(()=>{
