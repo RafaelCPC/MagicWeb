@@ -16,8 +16,9 @@ function Home() {
       openRegistration:false
     })
 
-  const [numberOfNotifications,setNumberOfNotifications] = useState(initNotifications.filter(item=>item.isRead==false).length)
-  const [numberOfCartItems,setNumberOfCartItems] = useState(initContentCart.length)
+  const [numberOfNotifications,setNumberOfNotifications] = useState(localStorage.getItem("notifications")?JSON.parse(localStorage.getItem("notifications")).filter(item=>item.isRead==false).length:initNotifications.filter(item=>item.isRead==false).length)
+  
+  const [numberOfCartItems,setNumberOfCartItems] = useState(localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")).length:initContentCart.length)
 
   useEffect(()=>{
     if(localStorage.getItem("userLogged")){

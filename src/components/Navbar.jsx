@@ -8,6 +8,7 @@ import OpenNavigationSections from "./OpenNavigationSections"
 
 function Navbar({states,callbacks,initContentCart,initNotifications,numberOfCartItems,numberOfNotifications}) {
 
+
   return (
     <div className="navbar-container">
       <div className="navbar">
