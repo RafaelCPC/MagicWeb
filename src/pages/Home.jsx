@@ -2,58 +2,16 @@ import { useEffect, useState } from 'react'
 import MainContent from '../components/MainContent'
 import Navbar from '../components/Navbar'
 import { initNotifications, initContentCart } from "../components/NavbarData"
+import { useUserStates } from '../hooks/useUserStates'
 
 function Home() {
 
-  const [isMainContent,setIsMainContent] = useState(true)
-  const [isUserLoggedIn,setIsUserLoggedIn] = useState(false)
-  const [isExplore,setIsExplore] = useState(false)
-  const [isMessageIcon, setMessageIcon] = useState({isNotifications:false,isCart:false,isUser:false,isMenu:false})
-  const [isSectionOpen,setIsSectionOpen] = useState({
-      openNotifications:false,
-      openCart:false,
-      openLogIn:false,
-      openRegistration:false
-    })
-
-  const [numberOfNotifications,setNumberOfNotifications] = useState(localStorage.getItem("notifications")?JSON.parse(localStorage.getItem("notifications")).filter(item=>item.isRead==false).length:initNotifications.filter(item=>item.isRead==false).length)
-  
-  const [numberOfCartItems,setNumberOfCartItems] = useState(localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")).length:initContentCart.length)
-
-  useEffect(()=>{
-    if(localStorage.getItem("userLogged")){
-      setIsUserLoggedIn(JSON.parse(localStorage.getItem("userLogged")))
-    }
-  },[])
-
-  useEffect(()=>{
-    if(isSectionOpen.openNotifications==true||isSectionOpen.openCart==true||isSectionOpen.openLogIn==true||isSectionOpen.openRegistration==true){
-      setIsMainContent(false)
-    }else if(isSectionOpen.openNotifications==false && isSectionOpen.openCart==false && isSectionOpen.openLogIn==false && isSectionOpen.openRegistration==false){
-      setIsMainContent(true)
-    }
-  },[isSectionOpen])
-
-  function CloseEverything() {
-    setIsExplore(!isExplore);
-    setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false});
-  }
-
-  const states = {isExplore,isUserLoggedIn,isMessageIcon,isSectionOpen}
-  const callbacks = {
-    CloseEverything,
-    setIsExplore,
-    setIsUserLoggedIn,
-    setMessageIcon,
-    setIsSectionOpen,
-    setNumberOfCartItems,
-    setNumberOfNotifications
-  }
+  const {states,callbacks,numberOfCartItems,numberOfNotifications} = useUserStates()
 
   return (
     <>
       <Navbar states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems} initContentCart={initContentCart} initNotifications={initNotifications}/>
-      {isMainContent && <MainContent states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems}/>}
+      {states.isMainContent && <MainContent states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems}/>}
     </>
   )
 }
