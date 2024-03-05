@@ -1,8 +1,10 @@
 import { useState } from "react"
 import Lists from "./Lists"
 import UserMenuIcons from "./UserMenuIcons"
+import Boton from "./Boton"
+import CloseIcon from "./CloseIcon"
 
-function Menu({isOpen,logOut}) {
+function Menu({isOpen,setOpen,logOut}) {
 
   const menuItems = [
     {id:"item1",svg:"url",nombreItem:"Profile"},
@@ -12,15 +14,22 @@ function Menu({isOpen,logOut}) {
   ]
 
   const [openSubMenu,setOpenSubMenu] = useState(false)
+  const [classClose, setClassClose] = useState("")
 
   function handleLogOut() {
     logOut()
     localStorage.setItem("userLogged","false")
   }
 
+  function closingMenu() {
+    setClassClose("menu-closed")
+    setTimeout(()=>setOpen(),250)
+  }
+
   return (
     isOpen && <>
-    <div className="user-menu">
+    <div className={"user-menu "+ classClose}>
+        <Boton Boton text={<CloseIcon/>} callback={()=>{return(closingMenu())}} isDisabled={false}/>
         <div className="user-menu-photo">
           <img src="src\assets\User.png" alt="foto usuario" width={150}/>
           <h3>Jace Beleren</h3>

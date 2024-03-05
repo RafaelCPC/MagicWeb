@@ -5,7 +5,7 @@ import Login from './Login'
 import RegistrationForm from './RegistrationForm'
 import Menu from './Menu'
 
-function OpenNavigationSections({states,callbacks,initContentCart,initNotifications,setNumberOfCartItems,setNumberOfNotifications}) {
+function OpenNavigationSections({states,callbacks,initContentCart,initNotifications}) {
 
     function handleCloseSection(popUpName) {
         const newStates = {}
@@ -28,7 +28,7 @@ function OpenNavigationSections({states,callbacks,initContentCart,initNotificati
        
     {states.isSectionOpen.openRegistration && <RegistrationForm isOpen={true} setOpen={()=>{handleCloseSection("openRegistration")}}/>}
       
-    {(states.isUserLoggedIn && states.isMessageIcon.isMenu) && <Menu onClick={(e)=>e.stopPropagation()} isOpen={true} logOut={()=>callbacks.setIsUserLoggedIn(false)}/>}
+    {(states.isUserLoggedIn && states.isMessageIcon.isMenu) && <Menu onClick={(e)=>e.stopPropagation()} setOpen={()=>callbacks.setMessageIcon((prev)=>{return({...prev,["isMenu"]:false})})} isOpen={true} logOut={()=>callbacks.setIsUserLoggedIn(false)}/>}
     
     </>
   )

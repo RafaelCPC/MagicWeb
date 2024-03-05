@@ -546,6 +546,23 @@ button{
     }
 }
 
+.menu-closed{
+    animation: to-right 300ms ease 0ms; 
+}
+
+@keyframes to-right {
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(500px);
+    }
+}
+
+.user-menu>button{
+    align-self: flex-end;
+}
+
 .user-menu-photo{
     display: flex;
     flex-direction: column;
@@ -666,7 +683,7 @@ button{
     animation: visibility-div 400ms ease 0ms;
 }
 
-@media (max-width:950px) {
+@media (max-width:900px) {
     .navbar{
         padding: 0 24px;
     }
@@ -720,7 +737,7 @@ button{
 
 @media (max-width:900px) {
     .sections-overlay>div {
-        width: auto;
+        width: 70vw;
         margin: 0px 15px;
         gap: 25px;
     }
@@ -801,6 +818,13 @@ button{
 
     .user-menu{
         height: calc(100% - 180px);
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .user-menu-content>ul>div div{
+        font-size: 16px;
+        padding: 6px 8px;
     }
 
     .notifications-menu>div {
@@ -866,6 +890,41 @@ button{
     }
 }
 
+@media (max-height:750px) {
+    .sections-overlay>div {
+        max-height: 70%;     
+        padding: 24px 24px;   
+    }
+
+    .registration-overlay>div>form {
+        gap: 10px;
+    }
+
+    .registration-overlay>div>form::-webkit-scrollbar{
+        width: 10px;
+        background: #8299ac;
+        border-radius: 5px;
+    }
+    
+    .registration-overlay>div>form::-webkit-scrollbar-thumb {
+        width: 10px;
+        background: var(--background-color-dark);
+        border-radius: 5px;
+    }
+
+    .registration-overlay>div>form>div {
+
+        align-self: flex-start;
+        font-size: 16px;
+    }
+
+    .registration-overlay>div>form input {
+        padding-left: 0;
+    }
+    .registration-overlay>div>form p {
+        display: none;
+    }
+}
 
 @media (max-height:900px) {
     .user-menu{
