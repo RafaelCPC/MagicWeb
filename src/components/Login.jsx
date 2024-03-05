@@ -20,7 +20,7 @@ function Login({isOpen,setOpen,logged}) {
         console.log('enviado')
         logged()
         localStorage.setItem("userLogged", JSON.stringify(true));  
-        setTimeout(()=>setOpen(),500)
+        setTimeout(()=>setOpen(),200)
       }
     
       function handleRegistrationSubmit(e) {
