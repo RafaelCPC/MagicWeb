@@ -6,7 +6,7 @@ import OpenPopUps from './OpenPopUps'
 function MainContent({states,callbacks}) {
   return (
     <div className='section-main-content'>
-      <EsteSeBorra states={states} callbacks={()=>{callbacks.setMessageIcon(prev=>{return({...prev,["isUser"]:true})})}}/> 
+      {/* <EsteSeBorra states={states} callbacks={()=>{callbacks.setMessageIcon(prev=>{return({...prev,["isUser"]:true})})}}/>  */}
     </div>
     
   )
