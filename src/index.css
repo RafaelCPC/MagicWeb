@@ -230,7 +230,10 @@ body {
     margin-bottom: 0px;
   }
   .Footer-explore h3 {
-    height: 0px;
+    padding: 0;
+    margin: 0 ;
+    margin-top: 10px;
+    width: 200px;
   }
 
   .Arrow {
@@ -263,9 +266,17 @@ body {
     color: antiquewhite;
     text-align: center;
   }
+  .Explore-category .ListOfLists{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    
+  }
   .Explore-category:hover h3 {
     border-bottom: none;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     text-align: center;
   }
   
@@ -426,7 +437,7 @@ body {
 .HowToCardButtom-container:hover .HowToCardButtom-svg-right{
   opacity: 1;
 }
-.text1,.text2,.text3,.text11,.text22,.text33 {
+.text1,.text2,.text3,.text11,.text22,.text33,.FlechaParabajo-top-1,.FlechaParabajo-top-2 {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -437,6 +448,22 @@ body {
   visibility: visible;
 }
 
+.HowToCardTop-container:hover .FlechaParabajo-top-1 {
+  transition-delay: 0.3s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardTop-container:hover .FlechaParabajo-top-2 {
+  transition-delay: 1s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.HowToCardTop-container:hover .text1 {
+  transition-delay: 0.2s;
+  opacity: 1;
+  visibility: visible;
+}
 
 .HowToCardTop-container:hover .text2 {
   transition-delay: .8s;
@@ -572,4 +599,34 @@ body {
 .HowTo-button:active::after {
   transition: 0s;
   transform: translate(0, 5%);
+}
+
+
+@media (max-width: 1700px){
+  .HowTo-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .HowToCardTop-container{
+    margin-bottom: 6rem;
+    /* width: 70%; */
+  }
+  .HowToCardButtom-container{
+    margin: 0 auto;
+    /* width: 70%; */
+
+  }
+  .text11 {
+    transform: translate(-7%,0%);
+  }
+  .text22 {
+    transform: translate(-3%,0%);
+  }
+  .text33 {
+    transform: translate(20%,0%);
+  }
+  .HowToCardTop-svg-left{
+    position: relative;
+   /* left: 300px;  */
+  }
 }
