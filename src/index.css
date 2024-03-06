@@ -734,11 +734,11 @@ button{
 .on-sale-section>ul>li{
     display: flex;
     flex-direction: column;
-    background-color: #21323f;
+    background-color: #152531;
     border-radius: 15px;
     gap: 10px;
     padding: 10px;
-    border: 2px solid var(--color-elementos-1);
+    border: 2px solid #7c878f;
 }
 
 .on-sale-section>ul>li>div{
@@ -758,7 +758,7 @@ button{
     margin: 5px 0;
     font-size: 20px;
     font-weight: 400;
-    color: #7cb84f;
+    color: #97eb57;
     flex: 1 0 0;
     border-top: 1px solid;
     border-bottom: 1px solid;
@@ -1043,6 +1043,14 @@ button{
 
     .on-sale-section>ul>li>div {
         height: 40%;
+    }
+
+    .on-sale-section>ul>li>p:first-of-type {
+        font-size: 16px;
+    }
+
+    .on-sale-section>ul>li>div:last-of-type>p {
+        font-size: 14px;
     }
 
 }
