@@ -19,6 +19,7 @@ export function useUserStates() {
     
     const [numberOfCartItems,setNumberOfCartItems] = useState(localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")).length:initContentCart.length)
   
+        
     useEffect(()=>{
       if(localStorage.getItem("userLogged")){
         setIsUserLoggedIn(JSON.parse(localStorage.getItem("userLogged")))
