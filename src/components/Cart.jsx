@@ -56,9 +56,9 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 							</div>
 							<p>{(cartItem.price*cartItem.total).toFixed(2)} EUR</p>
 							<div>
-								<Boton className="LoginFooterBar-button" text="+" callback={()=>handleIncreaseItem(cartItem.id)}/>
+								<Boton text="+" callback={()=>handleIncreaseItem(cartItem.id)} isDisabled={false}/>
 								<p>{cartItem.total}</p>
-								<Boton className="LoginFooterBar-button" text="-" callback={()=>handleDecreaseItem(cartItem.id)}/>
+								<Boton text="-" callback={()=>handleDecreaseItem(cartItem.id)} isDisabled={false}/>
 							</div>
 							<Boton className="svg-delete-item" text={<DeleteIcon/>} callback={() => handleDeleteCartItem(cartItem.id)}/>
 						</div>
@@ -66,8 +66,8 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 					})}
 				</ul>
 			<div>
-				<Boton text={"Continue Shopping"}/>
-				<Boton text={"Checkout"}/>
+				<Boton className="LoginFooterBar-button" text={"Continue Shopping"}/>
+				<Boton className="LoginFooterBar-button" text={"Checkout"}/>
 			</div>
 			</div>
 		</div>

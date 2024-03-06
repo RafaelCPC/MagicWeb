@@ -707,11 +707,12 @@ button{
     gap: 30px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 35px;
 }
 
 .on-sale-section>h3{
     margin-top: 35px;
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 600;
     background: var(--gradiente-texto);
     background-clip: text;
@@ -727,7 +728,7 @@ button{
     list-style: none;
     gap: 25px;
     gap: 25px;
-    padding: 50px;
+    padding: 15px 50px;
 }
 
 .on-sale-section>ul>li{

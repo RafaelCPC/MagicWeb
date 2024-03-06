@@ -38,7 +38,7 @@ function OnSaleProducts({ states, callbacks }) {
         })}
       </ul>
 
-      <Boton text={"Explore for more"} />
+      <Boton text={"Explore for more"} className="LoginFooterBar-button"/>
     </div>
   );
 }

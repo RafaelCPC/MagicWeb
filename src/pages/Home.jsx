@@ -3,9 +3,7 @@ import Navbar from '../components/Navbar'
 import { initNotifications, initContentCart } from "../components/NavbarData"
 import { useUserStates } from '../hooks/useUserStates'
 
-function Home() {
-
-  const {states,callbacks,numberOfCartItems,numberOfNotifications} = useUserStates()
+function Home({states,callbacks,numberOfCartItems,numberOfNotifications}) {
 
   return (
     <>
