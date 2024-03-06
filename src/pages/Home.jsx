@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import MainContent from '../components/MainContent'
 import Navbar from '../components/Navbar'
 import { initNotifications, initContentCart } from "../components/NavbarData"
