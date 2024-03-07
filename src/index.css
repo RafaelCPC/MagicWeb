@@ -322,7 +322,7 @@ body {
   width: 800px;
   height: 400px;
   border-radius: 50px;
-  
+  overflow: hidden;
   
 }
 .HowToCardTop-text{
@@ -387,8 +387,8 @@ body {
   width: 450px;
   box-sizing: border-box;
   flex-shrink: 0;
-  opacity: 0; 
-  transform: translateX(-100%);
+  /* opacity: 0;  */
+  /* transform: translateX(-100%); */
   transition: opacity 0.5s ease, transform 0.5s ease; 
 }
 
@@ -402,9 +402,9 @@ body {
   flex-shrink: 0;
   position: relative;
   left: -110px;
-  opacity: 0; 
+  /* opacity: 0; 
   transform: translateX(100%);
-  transition: opacity 0.5s ease, transform 0.5s ease; 
+  transition: opacity 0.5s ease, transform 0.5s ease;  */
 }
 
 .HowToCardButtom-container:hover .HowToCardButtom-svg-left {
@@ -437,7 +437,7 @@ body {
 .HowToCardButtom-container:hover .HowToCardButtom-svg-right{
   opacity: 1;
 }
-.text1,.text2,.text3,.text11,.text22,.text33,.FlechaParabajo-top-1,.FlechaParabajo-top-2 {
+.text1,.text2,.text3,.text11,.text22,.text33,.FlechaParabajo-top-1,.FlechaParabajo-top-2,.FlechaParabajo-top-3,.FlechaParabajo-top-4 {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -448,32 +448,32 @@ body {
   visibility: visible;
 }
 
-.HowToCardTop-container:hover .FlechaParabajo-top-1 {
-  transition-delay: 0.3s;
-  opacity: 1;
-  visibility: visible;
-}
-.HowToCardTop-container:hover .FlechaParabajo-top-2 {
-  transition-delay: 1s;
-  opacity: 1;
-  visibility: visible;
-}
+
+
 
 .HowToCardTop-container:hover .text1 {
   transition-delay: 0.2s;
   opacity: 1;
   visibility: visible;
 }
-
+.HowToCardTop-container:hover .FlechaParabajo-top-1 {
+  transition-delay: 0.7s;
+  opacity: 1;
+  visibility: visible;
+}
 .HowToCardTop-container:hover .text2 {
-  transition-delay: .8s;
+  transition-delay: 1.2s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardTop-container:hover .FlechaParabajo-top-2 {
+  transition-delay: 1.7s;
   opacity: 1;
   visibility: visible;
 }
 
-
 .HowToCardTop-container:hover .text3 {
-  transition-delay: 1.4s;
+  transition-delay: 2.2s;
   opacity: 1;
   visibility: visible;
 }
@@ -482,20 +482,30 @@ body {
   opacity: 1;
   visibility: visible;
 }
-
+.HowToCardButtom-container:hover .FlechaParabajo-top-3{
+  transition-delay: .7s;
+  opacity: 1;
+  visibility: visible;
+}
 
 .HowToCardButtom-container:hover .text22 {
-  transition-delay: .8s;
+  transition-delay: 1.3s;
   opacity: 1;
   visibility: visible;
 }
-
-
+.HowToCardButtom-container:hover .FlechaParabajo-top-4{
+  transition-delay: 1.8s;
+  opacity: 1;
+  visibility: visible;
+}
 .HowToCardButtom-container:hover .text33 {
-  transition-delay: 1.4s;
+  transition-delay: 2.2s;
   opacity: 1;
   visibility: visible;
 }
+
+
+
 
 
 .HowTo-button-container:hover {
