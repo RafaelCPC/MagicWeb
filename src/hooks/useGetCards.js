@@ -1,13 +1,13 @@
 import useSWR from "swr"
 
-export function useGetCards(isCalled) {
+export function useGetCards(type) {
 
   
-  const {data,error,mutate} = useSWR(isCalled)
+  const {data,error,mutate,isLoading,isValidating} = useSWR(type)
 
   function fetchCards() {
     // mutate()
   }
 
-  return {data, error,onFetchCards:fetchCards}
+  return {data, error,isLoading,isValidating,onFetchCards:fetchCards}
   }
