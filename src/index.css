@@ -402,9 +402,10 @@ body {
   /* transition: opacity 0.5s ease, transform 0.5s ease;  */
 }
 
-.HowToCardTop-container:hover .HowToCardTop-svg-right {
+.HowToCardTop-container:hover .HowToCardTop-svg-left{
   opacity: 1;
   transform: translateX(0); 
+  
 }
 .HowToCardButtom-svg-left {
   width: 450px;
@@ -416,7 +417,7 @@ body {
   margin-left: -110px;
 }
 
-.HowToCardButtom-container:hover .HowToCardButtom-svg-left {
+.HowToCardButtom-container:hover .HowToCardButtom-svg-right {
   opacity: 1;
   transform: translateX(0); 
 }
@@ -429,7 +430,8 @@ body {
   left: -107px;
   opacity: 0; 
   transition: opacity .5s ease; 
-  
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease; 
 }
 .HowToCardButtom-svg-right {
   width: 460px;
@@ -438,6 +440,8 @@ body {
   opacity: 0; 
   transition: opacity .5s ease; 
 
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease; 
 }
 .HowToCardTop-container:hover .HowToCardTop-svg-left {
   opacity: 1;
@@ -626,6 +630,9 @@ body {
 stroke:#050E15; stroke-width:0.3rem;
 
 }
+.ojoSvg{
+  display: none;
+}
 
 @media (max-width: 1700px){
   .HowTo-container{
@@ -671,6 +678,7 @@ stroke:#050E15; stroke-width:0.3rem;
     margin-bottom: 1rem;
     
   }
+  
   .HowToCardTop-svg-right{
     width: 54%;
     margin-bottom: 0;
@@ -713,6 +721,30 @@ stroke:#050E15; stroke-width:0.3rem;
   .HowToCardTop-container{
     background-image: url(./assets/avatarRojo.jpg);
   }
-  
-  
+  .HowToCardButtom-svg-right {
+    opacity: 1;
+    transform: translateX(0);
+
+  }
+  .HowToCardTop-svg-left{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .text1,.text2,.text3,.text11,.text22,.text33,.FlechaParabajo-top-1,.FlechaParabajo-top-2,.FlechaParabajo-top-3,.FlechaParabajo-top-4 {
+    opacity: 1;
+    visibility: visible;
+    
+  }
+}
+::-webkit-scrollbar {
+  width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0c1e2b; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b3891e; 
+  border-radius: 6px; 
 }

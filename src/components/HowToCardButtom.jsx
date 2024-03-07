@@ -21,6 +21,7 @@ function HowToCardButtom() {
           Boost your earnings
           </text>
         </svg>
+        
         <svg  xmlns="http://www.w3.org/2000/svg" className="HowToCardButtom-svg-left" viewBox="0 0 682 385" fill="none">
             <path d="M682 0H0L298.137 385H682V0Z" fill="url(#paint0_linear_399_726)" fillOpacity="0.7"/>
             <text className="HowToCardTop-text" x="60%" y="40%"  fill="#050E15"   color="#050E15">
