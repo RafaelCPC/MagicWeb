@@ -1,9 +1,7 @@
-import '../index.css'
+import React from 'react'
 function HowTocardLong() {
   return (
-    <div className="HowTocardLong-container">
-        
-    </div>
+    <div></div>
   )
 }
 

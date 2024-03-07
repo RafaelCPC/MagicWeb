@@ -1,7 +1,7 @@
 import Boton from "./Boton"
 import HowToCardButtom from "./HowToCardButtom"
 import HowToCardTop from "./HowToCardTop"
-import HowTocardLong from "./HowTocardLong"
+// import HowTocardLong from "./HowTocardLong"
 
 
 function HowTo() {
@@ -13,7 +13,7 @@ function HowTo() {
             <Boton className={"HowTo-button"} callback={() => handleFuction()} text="Sign Up" isDisabled={false}/>
         </div>
         <HowToCardButtom />
-        <HowTocardLong />
+        {/* <HowTocardLong /> */}
     </section>
   )
 }
