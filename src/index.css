@@ -312,12 +312,14 @@ body {
   align-items: center;
   background-color: #050E15;
   padding-top: 2rem;
+  gap: 6rem ;
+  padding-bottom: 3rem;
 }
 .HowToCardTop-container{
   display: flex;
   
   align-items: center;
-  background-image: url(./assets/HowToTop.png);
+  background-image: url(./assets/definitive.png);
   background-size: cover;
   width: 800px;
   height: 400px;
@@ -334,16 +336,24 @@ body {
   font-weight: 1000;
   line-height: normal;
 }
-
+.HowTocardLong-container{
+  display: none;
+  background-image: url(./assets/image_17.png);
+  width: 90%;
+  height: 211px;
+  border-radius: 35px;
+  /* background: url(<path-to-image>), lightgray 50% / cover no-repeat; */
+}
 .HowToCardButtom-container{
   display: flex;
-  
-  background-image: url(./assets/HowToButtom.png);
+  align-items: center;
+  /* justify-content: flex-end; */
+  background-image: url(./assets/dragones_9.png);
   background-size: cover;
   width: 800px;
   height: 400px;
   border-radius: 50px;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
   overflow-x: hidden;
  
 }
@@ -389,7 +399,7 @@ body {
   flex-shrink: 0;
   /* opacity: 0;  */
   /* transform: translateX(-100%); */
-  transition: opacity 0.5s ease, transform 0.5s ease; 
+  /* transition: opacity 0.5s ease, transform 0.5s ease;  */
 }
 
 .HowToCardTop-container:hover .HowToCardTop-svg-right {
@@ -400,11 +410,10 @@ body {
   width: 450px;
   box-sizing: border-box;
   flex-shrink: 0;
-  position: relative;
-  left: -110px;
   /* opacity: 0; 
   transform: translateX(100%);
   transition: opacity 0.5s ease, transform 0.5s ease;  */
+  margin-left: -110px;
 }
 
 .HowToCardButtom-container:hover .HowToCardButtom-svg-left {
@@ -426,10 +435,9 @@ body {
   width: 460px;
   box-sizing: border-box;
   flex-shrink: 0;
-  /* position: relative; */
-  /* left: -107px; */
   opacity: 0; 
   transition: opacity .5s ease; 
+
 }
 .HowToCardTop-container:hover .HowToCardTop-svg-left {
   opacity: 1;
@@ -610,17 +618,22 @@ body {
   transition: 0s;
   transform: translate(0, 5%);
 }
+.HowToCardTop-text{
+  stroke:#050E15; stroke-width:1%;
+} 
+  
+.HowToCardTop-text{
+stroke:#050E15; stroke-width:0.3rem;
 
+}
 
 @media (max-width: 1700px){
   .HowTo-container{
     display: flex;
     flex-direction: column;
+    gap: 4rem;
   }
-  .HowToCardTop-container{
-    margin-bottom: 6rem;
-    /* width: 70%; */
-  }
+  
   .HowToCardButtom-container{
     margin: 0 auto;
     /* width: 70%; */
@@ -639,4 +652,67 @@ body {
     position: relative;
    /* left: 300px;  */
   }
+  .HowToCardButtom-svg-left{
+    margin-top: 40px;
+  }
+  .HowToCardButtom-svg-right{
+    margin-top: 40px;
+  }
+  .HowToCardTop-svg-right{
+    margin-bottom: 50px;
+  }
+  .HowToCardTop-svg-left{
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 900px){
+  .HowToCardTop-container{
+    width: 95%;
+    margin-bottom: 1rem;
+    
+  }
+  .HowToCardTop-svg-right{
+    width: 54%;
+    margin-bottom: 0;
+    opacity: 0;
+  }
+  .HowToCardTop-svg-left{
+    width: 55%;
+    left: calc(50% - 55%);
+    margin-bottom: 0;
+
+  }
+  .HowTo-button-container{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .HowToCardButtom-container{
+    width: 95%;
+    margin: 0 auto;
+    justify-content: space-between ;
+  }
+  .HowToCardButtom-svg-right{
+    width: 54%;
+    right: calc(50% - 55%);
+    margin-top: 0;
+  }
+  .HowTo-button{
+    width: 45px;
+  }
+  .HowToCardButtom-svg-left{
+    width: 54%;
+    margin-top: 0;
+  }
+
+  .HowToCardButtom-container{
+    background-image: url(./assets/avatar_azul.png);
+
+  }
+  .HowToCardTop-container{
+    background-image: url(./assets/avatarRojo.jpg);
+  }
+  
+  
 }

@@ -25,14 +25,14 @@ function HowToCardTop() {
               Get the best deals  
             </text>
             
-          <svg className='FlechaParabajo-top-1'x="55%" y="22%"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="60">
+          <svg className='FlechaParabajo-top-1'x="65%" y="22%"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="60">
             <path fill="none" stroke="#c78d18"  strokeLinecap="round" strokeLinejoin="round" d="M19.09 3.5h0a1.41 1.41 0 0 0-1 .41L7 15l.41-6.91A1.51 1.51 0 0 0 5.9 6.5h0a1.51 1.51 0 0 0-1.5 1.4l-.9 12.6 12.6-.9a1.51 1.51 0 0 0 1.4-1.5h0a1.51 1.51 0 0 0-1.59-1.5L9 17 20.09 5.91a1.41 1.41 0 0 0 .41-1h0a1.41 1.41 0 0 0-1.41-1.41Z" data-name="Arrow 9 Right Down" ></path></svg>
 
           <text className="HowToCardTop-text-2 text2" x="20%" y="55%"  fill="#EDB72D"   color="#EDB72D">
           Enjoy the Gathering!
           </text>
          
-          <svg className='FlechaParabajo-top-2'x="34%" y="64%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="60">
+          <svg className='FlechaParabajo-top-2'x="40.5%" y="64%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="60">
             <path fill="none" stroke="#c78d18 "  strokeLinecap="round" strokeLinejoin="round" d="M19.09 3.5h0a1.41 1.41 0 0 0-1 .41L7 15l.41-6.91A1.51 1.51 0 0 0 5.9 6.5h0a1.51 1.51 0 0 0-1.5 1.4l-.9 12.6 12.6-.9a1.51 1.51 0 0 0 1.4-1.5h0a1.51 1.51 0 0 0-1.59-1.5L9 17 20.09 5.91a1.41 1.41 0 0 0 .41-1h0a1.41 1.41 0 0 0-1.41-1.41Z" data-name="Arrow 9 Right Down" ></path></svg>
 
 
