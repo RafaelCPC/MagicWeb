@@ -1,13 +1,13 @@
 import useSWR from "swr"
 
-export function useGetCards(username) {
+export function useGetCards(isCalled) {
 
   
-  const {data,error,mutate} = useSWR(username)
+  const {data,error,mutate} = useSWR(isCalled)
 
-  function fetchGithubUser() {
-    mutate()
+  function fetchCards() {
+    // mutate()
   }
 
-  return {data, error,onFetchingGithubUser:fetchGithubUser}
+  return {data, error,onFetchCards:fetchCards}
   }
