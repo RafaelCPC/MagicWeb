@@ -319,7 +319,7 @@ body {
   display: flex;
   
   align-items: center;
-  background-image: url(./assets/definitive.png);
+  background-image: url(./assets/HowToButtom.png);
   background-size: cover;
   width: 800px;
   height: 400px;
@@ -338,7 +338,7 @@ body {
 }
 .HowTocardLong-container{
   display: none;
-  background-image: url(./assets/image_17.png);
+  background-image: url(./assets/HowToTop.png);
   width: 90%;
   height: 211px;
   border-radius: 35px;
@@ -348,7 +348,7 @@ body {
   display: flex;
   align-items: center;
   /* justify-content: flex-end; */
-  background-image: url(./assets/dragones_9.png);
+  background-image: url(./assets/HowToTop.png);
   background-size: cover;
   width: 800px;
   height: 400px;
@@ -715,11 +715,14 @@ stroke:#050E15; stroke-width:0.3rem;
   }
 
   .HowToCardButtom-container{
-    background-image: url(./assets/avatar_azul.png);
+    background-image: url(./assets/Rakdos-Patron-of-Chaos-Murders-at-Karlov-Manor-MtG-Art.jpg);
 
   }
   .HowToCardTop-container{
-    background-image: url(./assets/avatarRojo.jpg);
+    background-image: url(./assets/Sword-of-Forge-and-Frontier-Phyrexia-All-Will-Be-One-MtG-Art.jpg);
+  }
+  .HowToCardTop-container:hover{
+    background-size: 170%;
   }
   .HowToCardButtom-svg-right {
     opacity: 1;
