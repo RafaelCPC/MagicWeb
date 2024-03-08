@@ -1,25 +1,17 @@
-import React, { useState, useRef, useEffect} from 'react'
+import React, { useState, useEffect} from 'react'
 
 const Banner = () => {
-  const listRef = useRef();
+ 
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(()=> {
-    const listNode = listRef.current;
-    const imgNode= listNode.querySelectorAll("li > img")[currentIndex];
-    if(imgNode){
-      imgNode.scrollIntoView({
-        behavior:"smooth"
-      });
-    }
-  
     const timerId = setInterval(() => {
-      if (currentIndex < items.length){
+      if (currentIndex < items.length-1){
         setCurrentIndex(currentIndex => currentIndex + 1);
       } else{
         setCurrentIndex(0);
       }
       
-    },30000);
+    },3000);
     
     return () => clearInterval(timerId);
   },[currentIndex])
@@ -40,6 +32,7 @@ const Banner = () => {
   ];
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex)
+    
   };
 
   return (
@@ -47,11 +40,11 @@ const Banner = () => {
     <div  className='Carousel'>
       <div className='inner'>
         <div  className='container-images'>
-           <ul  class="img_group" ref={listRef}>
+           <ul  className="img_group" >
               {items.map((item) =>{
                 return (
-                <li   key={item.id}>
-                  <img  className='img_banner' src={item.image}/>
+                <li    key={item.id}>
+                  <img style={{transform: `translate(-${currentIndex*100}%)`}} className='img_banner' src={item.image}/>
                 </li>
                 )}
               )}

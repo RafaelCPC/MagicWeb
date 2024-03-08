@@ -1,16 +1,8 @@
-import { useEffect,useRef, useState } from "react"
+import { useState } from "react"
 export function TopPrices ({title}) {
-    const listRef = useRef();
+    
     const [currentIndex, setCurrentIndex] = useState(0);
-    useEffect(()=> {
-        const listNode = listRef.current;
-        const imgNode= listNode.querySelectorAll("li")[currentIndex];
-        if(imgNode){
-          imgNode.scrollIntoView({
-            behavior:"smooth"
-          });
-        }
-      },[currentIndex])
+
     
  const cards = [
     {
@@ -111,9 +103,11 @@ const scrollToCard = (direction) => {
             return isFirstSlide ? 0: curr - 3;
         })
     } else {
-        const isLastSlide = currentIndex === cards.length -1;
-        if(!isLastSlide) {
+        
+        if(currentIndex < cards.length-8) {
             setCurrentIndex( curr => curr + 3)
+        }  else {
+            setCurrentIndex(0)
         }
     }
 } 
@@ -122,10 +116,10 @@ const scrollToCard = (direction) => {
         <div className="top_prices">
             <p className="title_top"> {title} </p>
             
-                <ul ref={listRef} className="price_list">
+                <ul  className="price_list">
                 {cards.map((card) =>{
                 return (  
-                    <li className="top_box" key={card.id}> 
+                    <li style={{transform: `translateY(-${currentIndex*100}%)`}} className="top_box" key={card.id}> 
                         <button className="card_box" >
                         <p className="text_card"> {card.cardname}</p>
                         <p className="price">{card.price}</p>
@@ -137,8 +131,8 @@ const scrollToCard = (direction) => {
              
             <div className="arrows">
                 <button onClick={()=>scrollToCard("prev")} className="arrowUp_button" >
-                    <svg className="arrow_svg" fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                        viewBox="0 0 512 512" xml:space="preserve">
+                    <svg className="arrow_svg" fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 512 512" xmlSpace="preserve">
                         <g>
                         <g>
                         <path d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M377.749,313.749
@@ -150,8 +144,8 @@ const scrollToCard = (direction) => {
                         </svg>
                 </button>
                 <button  onClick={()=>scrollToCard("next")} className="arrowDown_button">
-                    <svg className="arrow_svg" fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	                viewBox="0 0 512 512" xml:space="preserve">
+                    <svg className="arrow_svg" fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
+	                viewBox="0 0 512 512" xmlSpace="preserve">
                     <g>
 	                <g>
 		            <path d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M377.749,228.416
