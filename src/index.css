@@ -18,6 +18,15 @@
 }
 
 
+body{
+    background-color: var(--background-color-dark);
+    margin: 0;
+    color: var(--color-texto-secundario);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 ul::-webkit-scrollbar{
     width: 10px;
     background: #8299ac;
@@ -30,11 +39,9 @@ ul::-webkit-scrollbar-thumb {
     border-radius: 5px;
 }
 
-body{
-    background-color: var(--background-color-dark);
-    margin: 0;
+a{
+    text-decoration: none;
     color: var(--color-texto-secundario);
-    overflow-x: hidden;
 }
 
 button{
@@ -44,6 +51,12 @@ button{
     display: flex;
     align-content: center;
     flex-wrap: wrap;
+}
+
+.navbar-container{
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
 }
 
 .navbar{
@@ -533,7 +546,7 @@ button{
     margin-top: 5px;
     display: flex;
     width: 250px;
-    height: calc(100% - 115px);
+    height: calc(100vh - 115px);
     padding: 24px;
     flex-direction: column;
     align-items: flex-start;
@@ -698,6 +711,7 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 70px;
 }
 
 .on-sale-section{
@@ -732,11 +746,12 @@ button{
 }
 
 .on-sale-section>ul>li{
+    height: 350px;
     display: flex;
     flex-direction: column;
     background-color: #152531;
     border-radius: 15px;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
     border: 2px solid #7c878f;
 }
@@ -746,7 +761,14 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 5px 0px;
+    margin: 0 auto;
+}
+
+.on-sale-section>ul>li>div:last-of-type{
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .on-sale-section>ul>li>div>img{
@@ -762,6 +784,10 @@ button{
     flex: 1 0 0;
     border-top: 1px solid;
     border-bottom: 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .on-sale-section>ul>li>p:nth-of-type(2){
@@ -769,7 +795,7 @@ button{
 }
 
 .on-sale-section>ul>li>div:last-of-type{
-    height: unset;
+    height: 18px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -795,6 +821,75 @@ button{
 
 .add-to-cart>svg{
     width: 20px;
+}
+
+.explore-cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.explore-cards div{
+    max-width: 100%;
+    width: 90%;
+}
+
+.explore-cards ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.explore-cards ul>li{
+    width: 180px;
+    justify-content: center;
+    z-index: -1000;
+    animation: visibility-div 300ms ease 0ms;
+}
+.back-to-top-button{
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background-color: var(--color-elementos-1);
+    padding: 5px;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+
+.back-to-top-button:hover{
+    scale: 1.2;
+
+}
+
+.back-to-top-button>svg{
+    width: 24px;
+    fill: var(--color-texto-secundario);
+}
+
+.spinner-svg{
+    width: 150px;
+    position: absolute;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+}
+
+.spinner-svg>svg{
+    width: 150px; 
+    animation: spinner 2s linear infinite; 
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width:900px) {
@@ -863,24 +958,26 @@ button{
 
     .on-sale-section {
         max-width: 600px;
-        padding: 20px;
+        padding: 24px;
         width: unset;
     }
 
     .on-sale-section>ul {
         display: grid;
         padding: 0 15px;
-        grid-template-columns: 1fr 1fr ;
-        grid-template-rows: 1fr 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
         column-gap: 10px;
         row-gap: 20px;
-        overflow-y: scroll;
-        max-height: 600px;
+        justify-content: center;
     }
 
     .on-sale-section>ul>li {
         max-height: 350px;
         gap: unset;
+        width: 180px;
+        justify-content: center;
+        z-index: 0;
     }
 
 }
@@ -950,7 +1047,7 @@ button{
     }
 
     .user-menu{
-        height: calc(100% - 180px);
+        height: calc(100vh - 180px);
         padding: 12px;
         gap: 12px;
     }
@@ -1028,17 +1125,19 @@ button{
     }
 
     .on-sale-section>ul {
-        max-width: 80%;
-        display: grid;
-        grid-template-columns: 1fr ;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        max-width: 95%;
+        display: flex;
+        flex-wrap: wrap;
         column-gap: 10px;
         row-gap: 20px;
+        justify-content: center;
     }
 
     .on-sale-section>ul>li {
         max-height: 250px;
         gap: unset;
+        min-width: 100px;
+        max-width: 130px;
     }
 
     .on-sale-section>ul>li>div {
@@ -1058,6 +1157,12 @@ button{
 @media (max-width:400px) {
     .cart-overlay.sections-overlay>div>ul>div {
         grid-template-columns: 80px 80px auto;
+    }
+    .on-sale-section>ul>li {
+        max-height: 250px;
+        gap: unset;
+        min-width: 100px;
+        max-width: 110px;
     }
 }
 
