@@ -8,7 +8,7 @@ function Logo({height}) {
 
   return (
     <div>
-      <a href="#" onClick={handleLogoClick}>
+      <a href="/" onClick={handleLogoClick}>
         <img className='logo' src={logo} alt="Logo de MTG Masters" height={height} />
       </a>
     </div>
