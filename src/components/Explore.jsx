@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import CardsIcons from "./CardsIcons"
 import Lists from "./Lists"
 
@@ -25,7 +26,7 @@ function Explore() {
     <div className="search-explore-overlay">
         <div className="search-explore-container" onClick={(e)=>e.stopPropagation()}>
             <div>
-                <h2>Explore</h2>
+                <Link to={"/explore"}><h2>Explore</h2></Link>
                 <CardsIcons/>
             </div>
             <ul>
