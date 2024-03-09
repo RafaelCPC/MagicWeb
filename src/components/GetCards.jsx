@@ -17,7 +17,6 @@ function GetCards({type,callback}) {
 
 
     const handleScroll = useCallback((e) => {
-        //console.log((e.currentTarget.scrollY+e.currentTarget.innerHeight)==document.body.scrollHeight) 
         if((e.currentTarget.scrollY+e.currentTarget.innerHeight)==document.body.scrollHeight){
             setTimeout(()=>{
                 setStartIndex(()=>Math.min(startIndex+totalCards,cards.length))
