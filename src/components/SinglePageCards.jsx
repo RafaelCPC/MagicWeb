@@ -20,7 +20,7 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
 
         cards.filter((element,index) => (index>=start && index<=end)).forEach(element => {
             const cardUrl = element.img?element.img:element.imageUrl;
-            const cardContent = element.content?element.content:[element.name,element.artist,"Language: ENG"]
+            const cardContent = element.content?element.content:[element.name,`Set: ${element.set}`,"Language: ENG"]
             const cardPrice = element.price?element.price:((5.2+10*Math.random()).toFixed(2));
 
             const card = new Item(cardUrl,cardContent,cardPrice)
