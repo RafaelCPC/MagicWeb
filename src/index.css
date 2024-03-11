@@ -829,7 +829,8 @@ button{
     width: 100%;
     align-content: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 10px;
+    margin-bottom: 350px;
 }
 
 .explore-cards div{
@@ -871,7 +872,7 @@ button{
 
 .spinner-svg{
     width: 150px;
-    position: absolute;
+    position: relative;
     display: flex;
     align-self: center;
     justify-self: center;
@@ -881,6 +882,82 @@ button{
 .spinner-svg>svg{
     width: 150px; 
     animation: spinner 2s linear infinite; 
+}
+
+.content-explore-page{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-explore-page-title{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.content-explore-page-title h3{
+    /* font-size: 56px; */
+    font-size: clamp(2.25rem, 1rem + 4vw, 3rem);
+    background: var(--gradiente-texto);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.content-explore-page-title img{
+    width: 400px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 30%;
+}
+
+.content-explore-page-buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    width: 90%;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.explore-button{
+    padding: 24px;
+    /* font-size: 32px; */
+    font-size: clamp(1.25rem, 0rem + 4vw, 2rem);
+    align-items: center;
+    font-weight: 600;
+    color: #97eb57;
+    border-radius: 1rem 1rem 0 0;
+    border: solid 3px #97eb57;
+    border-bottom: solid 3px #97eb57;
+    transition: all 300ms ease;
+    background-color: var(--background-color-dark);
+}
+
+.content-explore-page-buttons button:hover{
+    border-bottom: solid 3px var(--background-color-dark);
+}
+
+
+.content-explore-page-svg{
+    position: relative;
+    top: -11px;
+    z-index: -100;
+    width: 90%;
+}
+
+.explore-button-active{
+    border-bottom: solid 3px var(--background-color-dark);
+    margin-bottom: -1px;
 }
 
 @keyframes spinner {
@@ -979,6 +1056,22 @@ button{
         justify-content: center;
         z-index: 0;
     }
+    .content-explore-page-buttons button {
+        padding: 16px;
+        border-width: 2px;
+    }
+    .content-explore-page-svg {
+        top: -10px;
+    }
+
+    .content-explore-page-buttons button:hover{
+        border-bottom: solid 1.5px var(--background-color-dark);
+        margin-bottom: -1px;
+    }
+    .explore-button-active{
+        border-bottom: solid 1.5px var(--background-color-dark);
+        margin-bottom: -1px;
+    }
 
 }
 
@@ -995,6 +1088,29 @@ button{
     .cart-overlay.sections-overlay>div>ul>div>div:first-of-type {
         width: 180px;
     }
+    .content-explore-page-title{
+        flex-direction: column;
+    }
+    .content-explore-page-title h3{
+        order: 2;
+    }
+    .content-explore-page-title img {
+        order: 1;
+        width: 80%;
+    }
+    .content-explore-page-buttons button {
+        padding: 12px;
+        border-width: 1px;
+    }
+    .content-explore-page-svg {
+        top: -10px;
+    }
+
+    .explore-button-active{
+        border-bottom: solid 1px var(--background-color-dark);
+
+    }
+
 }
 
 @media (max-width:500px) {

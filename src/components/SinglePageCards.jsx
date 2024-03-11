@@ -7,7 +7,7 @@ import ArrowUp from './ArrowUp';
 import SpinnerSVG from './SpinnerSVG';
 
 
-function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,setStartIndex,type,options,callback,scrollY}) {
+function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,setStartIndex,type,options="",callback,scrollToY}) {
 
     
     const {data,error,isLoading} = useGetCards(type,options)
@@ -35,16 +35,15 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
 
     useEffect(()=>{
         if(!isLoading){
-            setCards(data.cards.filter(element=>element.imageUrl))
+            setCards(data[type].filter(element=>element.imageUrl))
             setStartIndex(0)
-            window.scrollTo({ top: scrollY, behavior: 'auto' });
-        }  
+            }
     },[data])
     
     useEffect(()=>{ 
         const newCards = getCards(cards,startIndex,startIndex+(totalCards-1))
         setCardsArray(()=> [[...cardsArray],[...newCards]].flat())  
-        
+        window.scrollTo({ bottom: scrollToY, behavior: 'smooth' });
     },[startIndex])
 
     function handleSetCards(e) {
@@ -54,10 +53,9 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
 
   return (
     <>
-    {data &&!error && <ShowProducts callbackProduct={callback} cardsArray={cardsArray} className={"on-sale-section cards-section"} title={"Explore the Cards"}/>}
+    {data &&!error && <ShowProducts callbackProduct={callback} cardsArray={cardsArray} className={"on-sale-section cards-section"}/>}
         {isLoading && <SpinnerSVG/>}
         <Boton callback={handleSetCards} text={<ArrowUp/>} className='back-to-top-button'/> 
-        <div style={{width:'100%', height:'450px'}}></div> {/*Este se borra*/}
     </>
   )
 }
