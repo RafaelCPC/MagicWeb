@@ -10,7 +10,10 @@ function OnSaleProducts({ states, callbacks }) {
   const { onAddToCart } = useAddToCart({ states, callbacks });
 
   return (
-    <ShowProducts className={"on-sale-section"} cardsArray={onSale} title={"Explore the newest on-sale products"} callbackProduct={onAddToCart} text={<Link to="/explore">Explore for more</Link>}/>
+    <>
+      <ShowProducts className={"on-sale-section"} cardsArray={onSale} title={"Explore the newest on-sale products"} callbackProduct={onAddToCart} text={<Link to="/explore">Explore for more</Link>}/>
+      <Boton text={<Link to="/explore">Explore for more</Link>}/>
+    </>
   );
 }
 

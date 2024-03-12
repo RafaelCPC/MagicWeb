@@ -7,8 +7,7 @@ function ShowProducts({className,cardsArray,callbackProduct,title}) {
   return (
     <div className={className}>
         <h3>{title}</h3>
-        <Product cards={cardsArray} callback={callbackProduct}/>
-            
+        <Product cards={cardsArray} callback={callbackProduct}/>  
     </div>
   )
 }
