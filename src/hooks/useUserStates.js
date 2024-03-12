@@ -17,7 +17,7 @@ export function useUserStates() {
   
     const [numberOfNotifications,setNumberOfNotifications] = useState(localStorage.getItem("notifications")?JSON.parse(localStorage.getItem("notifications")).filter(item=>item.isRead==false).length:initNotifications.filter(item=>item.isRead==false).length)
     
-    const [numberOfCartItems,setNumberOfCartItems] = useState(localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")).length:initContentCart.length)
+    const [numberOfCartItems,setNumberOfCartItems] = useState(localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")).map(item=>item.total).reduce((a,b)=>a+b,0):initContentCart.map(item=>item.total).reduce((a,b)=>a+b,0))
   
         
     useEffect(()=>{

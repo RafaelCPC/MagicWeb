@@ -22,7 +22,7 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
         if(!!contentCart[0]){
             localStorage.setItem("cart", JSON.stringify(contentCart));  
         }
-        setTotalCart(contentCart.length)
+        setTotalCart(contentCart.map(item=>item.total).reduce((a,b)=>a+b,0));
     },[contentCart])
 
 	function handleIncreaseItem(id){
