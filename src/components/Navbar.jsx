@@ -8,14 +8,13 @@ import OpenNavigationSections from "./OpenNavigationSections"
 
 function Navbar({states,callbacks,initContentCart,initNotifications,numberOfCartItems,numberOfNotifications}) {
 
-
   return (
     <div className="navbar-container">
       <div className="navbar">
         <div className="logo-navbar">
           <Logo height={42} />
         </div>
-        <NavbarSearch onExplore={()=>callbacks.CloseEverything()}/>
+        <NavbarSearch onExplore={callbacks}/>
         <NavbarIcons stateIcons={states.isMessageIcon} onIconsClick={(stateIcons)=>{return (callbacks.setIsExplore(false),callbacks.setMessageIcon(stateIcons))}} userLogged={states.isUserLoggedIn}/>
       </div>
 

@@ -51,7 +51,7 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
 
     useEffect(()=>{
         if(!isLoading){
-            setCards(type=="cards"?data[type].filter(element=>element.imageUrl):data[type])
+            setCards(type=="cards"?data[type]?.filter(element=>element.imageUrl):data[type])
             setStartIndex(0)
             }
     },[data])
@@ -61,6 +61,12 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
         setCardsArray(()=> [[...cardsArray],[...newCards]].flat())  
         window.scrollTo({ bottom: scrollToY, behavior: 'smooth' });
     },[startIndex])
+
+    useEffect(()=>{ 
+        const newCards = type=="cards"?getCards(cards,startIndex,startIndex+(totalCards-1)):getSets(cards,startIndex,startIndex+(totalCards-1));
+        setCardsArray(()=> [...newCards])  
+        window.scrollTo({ bottom: scrollToY, behavior: 'smooth' });
+    },[options])
 
     function handleSetCards(e) {
         window.scrollTo({ top: 0, behavior: 'smooth' });

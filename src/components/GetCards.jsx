@@ -1,15 +1,19 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import SinglePageCards from './SinglePageCards';
 
-function GetCards({type,callback,iniOptions=""}) {
+function GetCards({type="cards",callback,initOptions=""}) {
        
     const [cards,setCards] = useState([])
     const [startIndex,setStartIndex] = useState(null)
     const [cardsArray, setCardsArray] = useState([])
-    const [options,setOptions] = useState(iniOptions)
+    const [options,setOptions] = useState(initOptions)
     const [scrollToY, setScrollToY] = useState(document.body.scrollHeight)
     const totalCards = 15; 
-   
+
+    
+   useEffect(()=>{
+    setOptions(initOptions)
+   },[initOptions])
 
     const handleScroll = useCallback((e) => {
       if(cards.length>0 && (e.currentTarget.scrollY+e.currentTarget.innerHeight)>=document.body.scrollHeight-10){

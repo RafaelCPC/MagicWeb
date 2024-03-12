@@ -10,13 +10,14 @@ function ExplorePage({states,callbacks,numberOfCartItems,numberOfNotifications})
   const { onAddToCart } = useAddToCart({ states, callbacks });
   const [isTheCards,setIsTheCards] = useState(true)
   const [isTheSets,setIsTheSets] = useState(false)
+  const [initOptions,setInitOptions] = useState('?page=1')
 
   return (
     <>
-      <Navbar states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems} initContentCart={initContentCart} initNotifications={initNotifications}/>
+      <Navbar states={states} callbacks={{...callbacks,setInitOptions}} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems} initContentCart={initContentCart} initNotifications={initNotifications}/>
       <ContentExplorePage callbackCards={()=>{setIsTheCards(true);setIsTheSets(false)}} callbackSets={()=>{setIsTheCards(false);setIsTheSets(true)}} isTheCards={isTheCards} isTheSets={isTheSets}/>
-      {isTheCards &&<GetCards type={"cards"} callback={onAddToCart} iniOptions='?page=1'/>}
-      {isTheSets &&<GetCards type={"sets"} callback={onAddToCart} iniOptions='?page=1'/>}
+      {isTheCards &&<GetCards type={"cards"} callback={onAddToCart} initOptions={initOptions}/>}
+      {isTheSets &&<GetCards type={"sets"} callback={onAddToCart} initOptions={initOptions}/>}
     </>
   )
 }

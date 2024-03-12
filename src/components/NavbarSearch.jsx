@@ -3,10 +3,12 @@ import Lupa from "./Lupa.JSX"
 
 function NavbarSearch({onExplore}) {
 
+
   const [inputSearch,setInputSearch]=useState("")
 
   function handleInputNavbarClick() {
-    onExplore()
+    onExplore.CloseEverything();
+    //onExplore.setInitOptions(`?name=${inputSearch}`)
   }
   
   function handleInputNavbarChange(e) {
@@ -19,6 +21,7 @@ function NavbarSearch({onExplore}) {
 
   function handleClickButtonSearch(e) {
     console.log("búsqueda: "+ inputSearch)
+    //onExplore.setInitOptions(`?name=${inputSearch}`)
   }
 
   return (
