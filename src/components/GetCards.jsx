@@ -3,12 +3,10 @@ import SinglePageCards from './SinglePageCards';
 
 function GetCards({type,callback,iniOptions=""}) {
        
-    // const {data,error,isLoading} = useGetCards(type)
     const [cards,setCards] = useState([])
     const [startIndex,setStartIndex] = useState(null)
     const [cardsArray, setCardsArray] = useState([])
-    const [options,setOptions] = useState(iniOptions)//useState('?page=1')
-    const [actualPage,setActualPage] = useState(1)
+    const [options,setOptions] = useState(iniOptions)
     const [scrollToY, setScrollToY] = useState(document.body.scrollHeight)
     const totalCards = 15; 
    
