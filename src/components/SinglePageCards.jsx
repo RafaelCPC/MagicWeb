@@ -21,27 +21,43 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
         cards.filter((element,index) => (index>=start && index<=end)).forEach(element => {
             const cardUrl = element.img?element.img:element.imageUrl;
             const cardContent = element.content?element.content:[element.name,`Set: ${element.set}`,"Language: ENG"]
-            const cardPrice = element.price?element.price:((5.2+10*Math.random()).toFixed(2));
+            const cardPrice = element.price?element.price:((5+10*Math.random()).toFixed(2));
 
             const card = new Item(cardUrl,cardContent,cardPrice)
             
             newCards.push({...card})
             
         });
-        
-        return newCards
-        
+
+        return newCards 
+    }
+
+    function getSets(cards,start,end) {
+
+        const newCards = [];
+
+        cards.filter((element,index) => (index>=start && index<=end)).forEach(element => {
+            const cardUrl = element.img?element.img:element.imageUrl;
+            const cardContent = element.content?element.content:[element.name,`Type: ${element.type}`,"Language: ENG"]
+            const cardPrice = element.price?element.price:((50+100*Math.random()).toFixed(2));
+
+            const card = new Item(cardUrl,cardContent,cardPrice)
+            
+            newCards.push({...card}) 
+        });
+
+        return newCards  
     }
 
     useEffect(()=>{
         if(!isLoading){
-            setCards(data[type].filter(element=>element.imageUrl))
+            setCards(type=="cards"?data[type].filter(element=>element.imageUrl):data[type])
             setStartIndex(0)
             }
     },[data])
     
     useEffect(()=>{ 
-        const newCards = getCards(cards,startIndex,startIndex+(totalCards-1))
+        const newCards = type=="cards"?getCards(cards,startIndex,startIndex+(totalCards-1)):getSets(cards,startIndex,startIndex+(totalCards-1));
         setCardsArray(()=> [[...cardsArray],[...newCards]].flat())  
         window.scrollTo({ bottom: scrollToY, behavior: 'smooth' });
     },[startIndex])
@@ -53,7 +69,7 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
 
   return (
     <>
-    {data &&!error && <ShowProducts callbackProduct={callback} cardsArray={cardsArray} className={"on-sale-section cards-section"}/>}
+    {data &&!error && <ShowProducts callbackProduct={callback} cardsArray={cardsArray} className={`on-sale-section ${type}-section`}/>}
         {isLoading && <SpinnerSVG/>}
         <Boton callback={handleSetCards} text={<ArrowUp/>} className='back-to-top-button'/> 
     </>

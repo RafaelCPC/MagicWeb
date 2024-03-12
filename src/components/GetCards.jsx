@@ -1,7 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import SinglePageCards from './SinglePageCards';
-import SpinnerSVG from './SpinnerSVG';
-
 
 function GetCards({type,callback,iniOptions=""}) {
        

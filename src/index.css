@@ -960,6 +960,14 @@ button{
     margin-bottom: -1px;
 }
 
+.sets-section>ul>li{
+    height: unset;
+}
+
+.sets-section>ul>li>p:first-of-type{
+    flex: 1 0 0;
+}
+
 @keyframes spinner {
     0% {
         transform: rotate(0deg);
@@ -1322,7 +1330,5 @@ button{
     .user-menu{
         overflow-y: scroll;
     }
-    .user-menu-content {
-        overflow-y: scroll;
-    }
+
 }

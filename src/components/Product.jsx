@@ -11,9 +11,9 @@ function Product({cards,callback}) {
         {cards.map((product) => {
           return (
             <li key={product.id}>
-              <div>
+              {product.img && <div>
                 <img src={product.img} alt={`Magic card for ${product.text}`} />
-              </div>
+              </div>}
               <p>{product.content[0]}</p>
               <p>{product.price} EUR</p>
               <div>
