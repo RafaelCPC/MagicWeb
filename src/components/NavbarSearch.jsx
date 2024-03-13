@@ -7,8 +7,9 @@ function NavbarSearch({onExplore}) {
   const [inputSearch,setInputSearch]=useState("")
 
   function handleInputNavbarClick() {
+    onExplore.setInitOptions(inputSearch?`?name=${inputSearch}`:'?page=1')
+    onExplore.setInitOptions(`?name=${inputSearch}`)
     onExplore.CloseEverything();
-    //onExplore.setInitOptions(`?name=${inputSearch}`)
   }
   
   function handleInputNavbarChange(e) {
@@ -21,7 +22,8 @@ function NavbarSearch({onExplore}) {
 
   function handleClickButtonSearch(e) {
     console.log("búsqueda: "+ inputSearch)
-    //onExplore.setInitOptions(`?name=${inputSearch}`)
+    onExplore.setInitOptions(inputSearch?`?name=${inputSearch}`:'?page=1')
+
   }
 
   return (
