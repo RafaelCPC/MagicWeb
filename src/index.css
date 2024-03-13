@@ -270,6 +270,19 @@ button{
     }
 }
 
+
+.user-popup{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100px;
+    align-content: center;
+}
+.user-popup>div:first-child{
+    margin-right: 20px;
+}
+
+
 .notifications-popup>div:first-child,.cart-popup>div:first-child,.user-popup>div:nth-child(2) {
     color: var(--color-texto-secundario);
     font-family: "Noto Sans";
@@ -309,6 +322,7 @@ button{
     display: flex;
     justify-content: center;
     z-index: 9999;
+    background-color: var(--background-color-dark);
 }
 
 .sections-overlay>div{
@@ -842,7 +856,7 @@ button{
 .explore-cards ul{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
 }
 
 .explore-cards ul>li{
@@ -931,7 +945,7 @@ button{
 }
 
 .explore-button{
-    padding: 24px;
+    padding:18px;
     /* font-size: 32px; */
     font-size: clamp(1.25rem, 0rem + 4vw, 2rem);
     align-items: center;
@@ -942,10 +956,8 @@ button{
     border-bottom: solid 3px #97eb57;
     transition: all 300ms ease;
     background-color: var(--background-color-dark);
-}
-
-.content-explore-page-buttons button:hover{
-    border-bottom: solid 3px var(--background-color-dark);
+    scale: 0.6;
+    margin-bottom: -23px;
 }
 
 
@@ -959,6 +971,9 @@ button{
 .explore-button-active{
     border-bottom: solid 3px var(--background-color-dark);
     margin-bottom: -1px;
+    text-decoration: underline 0.1rem;
+    padding: 24px;
+    scale: 1;
 }
 
 .sets-section>ul>li{
@@ -1065,18 +1080,13 @@ button{
         justify-content: center;
         z-index: 0;
     }
-    .content-explore-page-buttons button {
-        padding: 16px;
+    .explore-button {
         border-width: 2px;
     }
     .content-explore-page-svg {
         top: -10px;
     }
 
-    .content-explore-page-buttons button:hover{
-        border-bottom: solid 1.5px var(--background-color-dark);
-        margin-bottom: -1px;
-    }
     .explore-button-active{
         border-bottom: solid 1.5px var(--background-color-dark);
         margin-bottom: -1px;
@@ -1107,17 +1117,25 @@ button{
         order: 1;
         width: 80%;
     }
-    .content-explore-page-buttons button {
-        padding: 12px;
-        border-width: 1px;
+    .explore-button {
+        border-width: 2px;
+
     }
     .content-explore-page-svg {
-        top: -10px;
+        top: -9px;
     }
 
     .explore-button-active{
         border-bottom: solid 1px var(--background-color-dark);
+        margin-bottom: -2px;
+    }
 
+    .content-explore-page-svg {
+        top: -8px;
+    }
+
+    .explore-button-active {
+        margin-bottom: -3px;
     }
 
 }
@@ -1275,6 +1293,14 @@ button{
 
     .on-sale-section>ul>li>div:last-of-type>p {
         font-size: 14px;
+    }
+
+    .content-explore-page-svg {
+        top: -6px;
+    }
+
+    .explore-button-active {
+        margin-bottom: -5px;
     }
 
 }

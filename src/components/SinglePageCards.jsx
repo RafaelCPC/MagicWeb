@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useGetCards } from '../hooks/useGetCards'
 import { Item } from './itemCard'
 import ShowProducts from './ShowProducts';
@@ -7,10 +7,11 @@ import ArrowUp from './ArrowUp';
 import SpinnerSVG from './SpinnerSVG';
 
 
-function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,setStartIndex,type,options="",callback,scrollToY}) {
+function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,setStartIndex,type,options="",setOptions,callback}) {
 
     
     const {data,error,isLoading} = useGetCards(type,options)
+    const [actualPage,setActualPage] =useState(1)
     
     const totalCards = 15; 
 
@@ -57,20 +58,30 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
     },[data])
     
     useEffect(()=>{ 
-        const newCards = type=="cards"?getCards(cards,startIndex,startIndex+(totalCards-1)):getSets(cards,startIndex,startIndex+(totalCards-1));
-        setCardsArray(()=> [[...cardsArray],[...newCards]].flat())  
-        window.scrollTo({ bottom: scrollToY, behavior: 'smooth' });
+        if(!isLoading){
+            const newCards = type=="cards"?getCards(cards,startIndex,startIndex+(totalCards-1)):getSets(cards,startIndex,startIndex+(totalCards-1));
+            setCardsArray(()=> [[...cardsArray],[...newCards]].flat())  
+        }
     },[startIndex])
-
-    useEffect(()=>{ 
-        const newCards = type=="cards"?getCards(cards,startIndex,startIndex+(totalCards-1)):getSets(cards,startIndex,startIndex+(totalCards-1));
-        setCardsArray(()=> [...newCards])  
-        window.scrollTo({ bottom: scrollToY, behavior: 'smooth' });
-    },[options])
 
     function handleSetCards(e) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    const handleScroll = useCallback((e) => {
+      if(cards.length>0 && (e.currentTarget.scrollY+e.currentTarget.innerHeight)>=document.body.scrollHeight-10){
+        
+            setStartIndex(()=>Math.min(startIndex+totalCards,cards.length))
+            if((startIndex+totalCards>=cards.length)&&!isLoading){
+                setActualPage((prev)=>prev+1)
+                setOptions(`?page=${actualPage+1}`)
+            }
+        
+    }
+    }, [startIndex])
+
+
+    document.querySelector('body').onscroll= handleScroll;
 
 
   return (
