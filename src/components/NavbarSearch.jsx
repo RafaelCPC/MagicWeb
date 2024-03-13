@@ -1,10 +1,12 @@
 import { useState } from "react"
 import Lupa from "./Lupa.JSX"
+import { useNavigate } from "react-router-dom";
 
 function NavbarSearch({onExplore}) {
 
 
   const [inputSearch,setInputSearch]=useState("")
+  const navigate = useNavigate();
 
   function handleInputNavbarClick() {
     onExplore.setInitOptions(inputSearch?`?name=${inputSearch}`:'?page=1')
@@ -23,6 +25,7 @@ function NavbarSearch({onExplore}) {
   function handleClickButtonSearch(e) {
     console.log("búsqueda: "+ inputSearch)
     onExplore.setInitOptions(inputSearch?`?name=${inputSearch}`:'?page=1')
+    navigate("/explore");
 
   }
 
