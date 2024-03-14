@@ -33,7 +33,7 @@ function OpenPopUps({states,callbacks,numberOfNotifications,numberOfCartItems}) 
   return (
 
     <div className="elements-overlay" onClick={()=>{return (callbacks.setIsExplore(false),callbacks.setMessageIcon({isNotifications:false,isCart:false,isUser:false,isMenu:false}))}}>
-    {states.isExplore && <Explore />}
+    {states.isExplore && <Explore states={states} callback={callbacks}/>}
     
     {states.isUserLoggedIn? (states.isMessageIcon.isNotifications && !states.isSectionOpen.openNotifications) && <NavbarPopUp className="popup notifications-popup" content={[`You have ${numberOfNotifications?numberOfNotifications:"no"} unread notifications!`,<Boton text={"See Notifications"} callback={()=>handleOpenSection("openNotifications")}/>]} onClick={(e)=>e.stopPropagation()}/>:
       states.isMessageIcon.isNotifications && <NavbarPopUp className="popup user-popup" content={[<Boton text={"Sign in"} callback={()=>handleOpenSection("openLogIn")}/>,"Not Registered?",<Boton text={"Sign Up"} callback={()=>handleOpenSection("openRegistration")}/>]} onClick={(e)=>e.stopPropagation()}/>}

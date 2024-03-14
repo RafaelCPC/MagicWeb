@@ -2,7 +2,9 @@ import { Link } from "react-router-dom"
 import CardsIcons from "./CardsIcons"
 import Lists from "./Lists"
 
-function Explore() {
+function Explore({states,callback}) {
+
+    console.log(callback)
 
     const exploreCategories=[
         {name: "Formats",
@@ -26,7 +28,7 @@ function Explore() {
     <div className="search-explore-overlay">
         <div className="search-explore-container" onClick={(e)=>e.stopPropagation()}>
             <div>
-                <Link to={"/explore"}><h2>Explore</h2></Link>
+                <Link to={"/explore"}><h2 onClick={()=>callback.setIsExplore(false)}>Explore</h2></Link>
                 <CardsIcons/>
             </div>
             <ul>
