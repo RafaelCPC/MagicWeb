@@ -72,13 +72,13 @@ button{
 
 .logo-navbar{
     display: flex;
-    width: 187px;
+    width: 140px;
     justify-content: space-between;
     align-items: center; 
+
 }
 
 .logo-navbar>div>a{
-    width: 0;
     display: flex;
 }
 
@@ -91,7 +91,7 @@ button{
 
 .form-navbar{
     display: flex;
-    width: 539px;
+    width: 100%;
     padding: 5px 10px 5px 15px;
     justify-content: space-between;
     align-items: center; 
@@ -734,7 +734,7 @@ button{
 .on-sale-section{
     display: flex;
     flex-direction: column;
-    width: 900px;
+    width: 80%;
     gap: 30px;
     justify-content: center;
     align-items: center;
@@ -1001,11 +1001,12 @@ button{
     }
 
     .logo-navbar {
-        width: 120px;
+        width: 140px;
     }
 
     .form-navbar {
         width: 100%;
+        height: 35px;
     }
 
     .navbar-icons{
@@ -1149,7 +1150,7 @@ button{
     }
 
     .logo-navbar {
-        width: 120px;
+        width: 55px;
     }
 
     .search-explore-container {
