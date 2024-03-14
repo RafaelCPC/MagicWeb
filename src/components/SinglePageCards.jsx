@@ -78,7 +78,7 @@ function SinglePageCards({cards,setCards,cardsArray,setCardsArray,startIndex,set
         }
     },[startIndex])
 
-    function handleSetCards(e) {
+    function handleSetCards() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 

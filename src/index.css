@@ -173,6 +173,7 @@ button{
     margin: 2px;
     gap: 15px;
     border: 1px solid var(--color-background-dark, #050E15);
+    background-color: var(--color-elementos-1);
     background: var(--gradiente-select-menu);
     background-size: cover;
 }
@@ -253,6 +254,7 @@ button{
     gap: 16px;
     position: absolute;
     right: 0px;
+    background-color: var(--color-elementos-1);
     background: url(assets/backgroundElements.png);
     background-size: cover;
     margin: 5px;

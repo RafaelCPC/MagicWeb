@@ -9,8 +9,6 @@ function NavbarSearch({onExplore}) {
   const navigate = useNavigate();
 
   function handleInputNavbarClick() {
-    onExplore.setInitOptions(inputSearch?`?name=${inputSearch}`:'?page=1')
-    onExplore.setInitOptions(`?name=${inputSearch}`)
     onExplore.CloseEverything();
   }
   
@@ -20,6 +18,9 @@ function NavbarSearch({onExplore}) {
 
   function handleSubmit(e){
     e.preventDefault()
+    onExplore.setInitOptions(inputSearch?`?name=${inputSearch}`:'?page=1')
+    onExplore.setIsExplore(false)
+    navigate("/explore");
   }
 
   function handleClickButtonSearch(e) {
@@ -34,7 +35,7 @@ function NavbarSearch({onExplore}) {
     <div className="navbar-search">
       <form onSubmit={handleSubmit} className="form-navbar">
         <input  className="input-search" value={inputSearch} type="text" name="" id="" onClick={handleInputNavbarClick} onChange={handleInputNavbarChange} placeholder="Search..."/>
-        <button type="submit" onClick={handleClickButtonSearch}><Lupa/></button>
+        <button type="button" onClick={handleClickButtonSearch}><Lupa/></button>
     </form>
     </div>
     
