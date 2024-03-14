@@ -25,6 +25,7 @@ function NavbarSearch({onExplore}) {
   function handleClickButtonSearch(e) {
     console.log("búsqueda: "+ inputSearch)
     onExplore.setInitOptions(inputSearch?`?name=${inputSearch}`:'?page=1')
+    onExplore.setIsExplore(false)
     navigate("/explore");
 
   }
