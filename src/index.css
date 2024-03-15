@@ -1398,15 +1398,12 @@ button{
   );
   background-blend-mode: lighten;
   margin: 0 auto;
+  background-size: cover;
 }
 .LoginFooterBar h2 {
   color: antiquewhite;
 
   cursor: default;
-}
-.LoginFooterBar h2:hover {
-  border-bottom: 2px solid rgb(230, 0, 18);
-  transform: scale(0.95);
 }
 
 .LoginFooterBar-button {
@@ -1506,10 +1503,11 @@ button{
   cursor: pointer;
 
   /* box-shadow: 1px 1px 0px red; */
-  border-bottom: 2px solid rgb(230, 0, 18);
+  border-bottom: 1px solid var(--color-texto-secundario);
   transform: scale(0.95);
 }
 .Footer-explore h3 {
+  color: #97eb57;;
   font-size: 20px;
   width: 110px;
   transition: transform 0.3s ease-in-out;
@@ -1520,7 +1518,7 @@ button{
 .Footer-explore h3:hover {
   cursor: pointer;
   /* box-shadow: 2px 2px 0px red; */
-  border-bottom: 2px solid rgb(230, 0, 18);
+  border-bottom: 2px solid var(--color-texto-secundario);
   transform: scale(1.1);
 }
 
@@ -2116,13 +2114,10 @@ stroke:#050E15; stroke-width:0.3rem;
 /* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
 /* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
 /* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
-#root{
-  background-image: linear-gradient(to bottom, #013A64, #050E15);
-}
 
 .CardsStats-container{
   background-color: #050E15;
-  margin: 0 auto;
+  margin: 100px auto;
   display: flex;
   flex-direction: column;
   
@@ -2241,7 +2236,7 @@ th, td {
   font-size: 20px;
   font-weight: 800;
   color: #EDB72D;
-  background-color: #091117;
+  background-color: var(--background-color-dark);
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
@@ -2249,9 +2244,7 @@ th, td {
   margin-bottom: 40px;
   margin-top: 40px;
   height: 30px;
-  width: 220px;
   border-bottom: 2px solid #EDB72D;
-  
 }
  a{
   text-decoration: none; 

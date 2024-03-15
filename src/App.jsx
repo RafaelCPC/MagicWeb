@@ -12,7 +12,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home  states={states} callbacks={callbacks} numberOfCartItems={numberOfCartItems} numberOfNotifications={numberOfNotifications}/>}/>
       <Route path="explore" element={<ExplorePage states={states} callbacks={callbacks} numberOfCartItems={numberOfCartItems} numberOfNotifications={numberOfNotifications}/>}/>
-      <Route  path="/cardsinfo" element={<CardsStats />}>
+      <Route  path="/cardsinfo" element={<CardsStats states={states} callbacks={callbacks} numberOfCartItems={numberOfCartItems} numberOfNotifications={numberOfNotifications}/>}>
           {/* <Route path=":id" element={<CardsStats />}/> */}
         </Route> 
     </Routes>
