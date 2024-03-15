@@ -5,6 +5,7 @@ import Logo from "./Logo"
 import { initNotifications, initContentCart } from "./NavbarData"
 import OpenPopUps from "./OpenPopUps"
 import OpenNavigationSections from "./OpenNavigationSections"
+import { Link } from "react-router-dom"
 
 function Navbar({states,callbacks,initContentCart,initNotifications,numberOfCartItems,numberOfNotifications}) {
 
@@ -12,7 +13,9 @@ function Navbar({states,callbacks,initContentCart,initNotifications,numberOfCart
     <div className="navbar-container">
       <div className="navbar">
         <div className="logo-navbar">
-          <Logo height={42} />
+          <Link to={"/"}> 
+            <Logo height={42} />
+          </Link>
         </div>
         <NavbarSearch onExplore={callbacks}/>
         <NavbarIcons numberOfCartItems={numberOfCartItems} numberOfNotifications={numberOfNotifications} stateIcons={states.isMessageIcon} onIconsClick={(stateIcons)=>{return (callbacks.setIsExplore(false),callbacks.setMessageIcon(stateIcons))}} userLogged={states.isUserLoggedIn}/>

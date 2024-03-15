@@ -7,10 +7,10 @@ import ExploreEdi from "./ExploreCategoriesEdi";
 
 
 
-function Footer() {
+function Footer({callbacks}) {
   return (
     <footer className="footer">
-        <LoginFooterBar/>
+        <LoginFooterBar callback={callbacks}/>
         <hr className="footer-hr" />
         <Explore/>
         <ExploreEdi/>

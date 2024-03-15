@@ -9,7 +9,7 @@ function Home({states,callbacks,numberOfCartItems,numberOfNotifications}) {
     <>
       <Navbar states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems} initContentCart={initContentCart} initNotifications={initNotifications}/>
       {states.isMainContent && <MainContent states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems}/>}
-      <Footer/>
+      <Footer callbacks={()=>{callbacks.setMessageIcon(prev=>{return({...prev,["isUser"]:true})})}}/>
     </>
   )
 }
