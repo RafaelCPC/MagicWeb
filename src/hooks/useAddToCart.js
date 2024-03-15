@@ -21,6 +21,8 @@ export function useAddToCart({states,callbacks}) {
         }
         callbacks.setNumberOfCartItems(JSON.parse(localStorage.getItem("cart"))?.length)
 
+        alert(`Item añadido`)
+
     }
     
     return {onAddToCart:onAddToCart}
