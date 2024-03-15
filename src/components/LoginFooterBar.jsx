@@ -9,7 +9,7 @@ export const LoginFooterBar = ({callback}) => {
   return (
     <div className="LoginFooterBar">
         <Logo height={70}/>
-        <div className="div2"><h2>Join Our Community log-in New</h2></div>
+        <div className="div2"><h2>Join Our Community log-in Now</h2></div>
         <div><Boton className={"LoginFooterBar-button"} callback={callback} text="Log-in" isDisabled={false}/></div>
         
     </div>
