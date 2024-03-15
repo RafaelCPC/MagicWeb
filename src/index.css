@@ -193,7 +193,7 @@ button{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.search-explore-container>div>h2{
+.search-explore-container>div h2{
     margin: 0;
     font-weight: 600;
 }
@@ -225,10 +225,7 @@ button{
 .search-explore-container>ul>li>h3{
     margin-bottom: 5px;
     font-size: 20px;
-    background: var(--grad-texto-azul);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #97eb57;
     font-weight: 500;
 }
 
