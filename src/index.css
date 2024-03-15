@@ -1358,4 +1358,1019 @@ button{
         overflow-y: scroll;
     }
 
+}body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+.footer {
+  align-items: center;
+  justify-content: center;
+  background-color: #050e15;
+  color: antiquewhite;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+}
+.LoginFooterBar {
+  display: flex;
+  max-width: 1140px;
+  padding: 24px 76px 24px 75px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border-radius: 10px;
+  background: var(
+    --gradiente-select-menu,
+    url(<path-to-image>),
+    rgb(8, 55, 83) 50% / cover no-repeat
+  );
+  background-blend-mode: lighten;
+  margin: 0 auto;
+}
+.LoginFooterBar h2 {
+  color: antiquewhite;
+
+  cursor: default;
+}
+.LoginFooterBar h2:hover {
+  border-bottom: 2px solid rgb(230, 0, 18);
+  transform: scale(0.95);
+}
+
+.LoginFooterBar-button {
+  all: unset;
+
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+  height: 48px;
+  padding: 0px 38px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #023a64);
+  border: none;
+  white-space: nowrap;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.LoginFooterBar-button::after,
+.LoginFooterBar-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all 0.4s;
+}
+
+.LoginFooterBar-button::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #050e15;
+  border-radius: 10px;
+}
+
+.LoginFooterBar-button::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+
+  /* background: #073753;
+  background: #c78d18; */
+  background: linear-gradient(315deg, #073753 40%, #c78d18 84%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.LoginFooterBar-button:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.LoginFooterBar-button:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.LoginFooterBar-button:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+.Footer-explore {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ListOfLists {
+  margin-top: 6px;
+  width: 85px;
+  transition: transform 0.2s ease-in-out;
+
+  /* color: #c78d18; */
+}
+.ListOfLists:hover {
+  cursor: pointer;
+
+  /* box-shadow: 1px 1px 0px red; */
+  border-bottom: 2px solid rgb(230, 0, 18);
+  transform: scale(0.95);
+}
+.Footer-explore h3 {
+  font-size: 20px;
+  width: 110px;
+  transition: transform 0.3s ease-in-out;
+}
+.Arrow {
+  display: none;
+}
+.Footer-explore h3:hover {
+  cursor: pointer;
+  /* box-shadow: 2px 2px 0px red; */
+  border-bottom: 2px solid rgb(230, 0, 18);
+  transform: scale(1.1);
+}
+
+.footer-bar {
+  display: flex;
+  max-width: 1140px;
+  padding: 24px 26px 24px 25px;
+  align-items: center;
+
+  border-radius: 10px;
+  justify-content: space-around;
+  background-blend-mode: lighten;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+
+.footer-hr {
+  height: 3px;
+  background-color: #013a64;
+  border: none;
+  margin: 40px 0 40px 0;
+}
+
+.SocialMedia {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.SocialMedia-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: var(
+    --gradiente-select-menu,
+    url(<path-to-image>),
+    rgb(8, 55, 83) 50% / cover no-repeat
+  );
+  transition: transform 0.3s ease-in-out;
+}
+.SocialMedia-icon:hover {
+  transform: scale(1.3);
+  background-color: #c78d18;
+}
+.ExploreEdi {
+  display: none;
+}
+@media (max-width: 1400px) {
+  .LoginFooterBar {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+@media (max-width: 990px) {
+  .ExploreEdi {
+    display: none;
+  }
+  
+  .footer {
+    padding-bottom: 1rem;
+  }
+  .footer-bar {
+    gap: 30px;
+    margin-bottom: 0px;
+  }
+  .Footer-explore h3 {
+    padding: 0;
+    margin: 0 ;
+    margin-top: 10px;
+    width: 200px;
+  }
+
+  .Arrow {
+    color: #c78d18;
+    display: contents;
+  }
+  .Footer-explore {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .LoginFooterBar {
+    display: flex;
+    width: 505px;
+    padding: 24px 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    background-blend-mode: lighten;
+    margin: 0 auto;
+  }
+  .LoginFooterBar .logo {
+    display: none;
+  }
+
+  .Explore-category h3 {
+    color: antiquewhite;
+    text-align: center;
+  }
+  .Explore-category .ListOfLists{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    
+  }
+  .Explore-category:hover h3 {
+    border-bottom: none;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+
+  .footer-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Footer-explore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .LoginFooterBar {
+    width: 65%;
+  }
+  .displayFooterExplore{
+    display: none;
+  }
+}
+
+
+/* sssssssssssssssssssssssssssssssssssssssssssssssssssHOW TO CARD */
+.HowTo-container{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  background-color: #050E15;
+  padding-top: 2rem;
+  gap: 6rem ;
+  padding-bottom: 3rem;
+}
+.HowToCardTop-container{
+  display: flex;
+  
+  align-items: center;
+  background-image: url(./assets/HowToButtom.png);
+  background-size: cover;
+  width: 800px;
+  height: 400px;
+  border-radius: 50px;
+  overflow: hidden;
+  
+}
+.HowToCardTop-text{
+  color: #050E15;
+  -webkit-text-stroke-width: 3;
+  -webkit-text-stroke-color: #050E15;
+  font-family: "Noto Sans";
+  font-size: 96px;
+  font-weight: 1000;
+  line-height: normal;
+}
+.HowTocardLong-container{
+  display: none;
+  background-image: url(./assets/HowToTop.png);
+  width: 90%;
+  height: 211px;
+  border-radius: 35px;
+  /* background: url(<path-to-image>), lightgray 50% / cover no-repeat; */
+}
+.HowToCardButtom-container{
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */
+  background-image: url(./assets/HowToTop.png);
+  background-size: cover;
+  width: 800px;
+  height: 400px;
+  border-radius: 50px;
+  /* margin-left: 5rem; */
+  overflow-x: hidden;
+ 
+}
+.HowToCardTop-text-2{
+  color: #EDB72D;
+  
+  -webkit-text-stroke-width: 3;
+  -webkit-text-stroke-color: #050E15;
+  font-family: "Noto Sans";
+  font-size: 40px;
+  
+  font-weight: 800;
+  line-height: normal;
+}
+.HowToCardButtom-text-2{
+  color: #EDB72D;
+  
+  -webkit-text-stroke-width: 3;
+  -webkit-text-stroke-color: #050E15;
+  font-family: "Noto Sans";
+  font-size: 40px;
+  
+  font-weight: 800;
+  line-height: normal;
+}
+.HowTo-button-container{
+  width: 200px;
+  height: 200px;
+  display: flex;
+  border-radius: 300px;
+  border: 20px solid #050E15;
+  background: var(--color-elementos-4, #c78d18);
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  transition: background-color 0.5s ease;
+  
+}
+.HowToCardTop-svg-right {
+  width: 450px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  /* opacity: 0;  */
+  /* transform: translateX(-100%); */
+  /* transition: opacity 0.5s ease, transform 0.5s ease;  */
+}
+
+.HowToCardTop-container:hover .HowToCardTop-svg-left{
+  opacity: 1;
+  transform: translateX(0); 
+  
+}
+.HowToCardButtom-svg-left {
+  width: 450px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  /* opacity: 0; 
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;  */
+  margin-left: -110px;
+}
+
+.HowToCardButtom-container:hover .HowToCardButtom-svg-right {
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+.HowToCardTop-svg-left{
+  width: 460px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: relative;
+  left: -107px;
+  opacity: 0; 
+  transition: opacity .5s ease; 
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+.HowToCardButtom-svg-right {
+  width: 460px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  opacity: 0; 
+  transition: opacity .5s ease; 
+
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+.HowToCardTop-container:hover .HowToCardTop-svg-left {
+  opacity: 1;
+}
+.HowToCardButtom-container:hover .HowToCardButtom-svg-right{
+  opacity: 1;
+}
+.text1,.text2,.text3,.text11,.text22,.text33,.FlechaParabajo-top-1,.FlechaParabajo-top-2,.FlechaParabajo-top-3,.FlechaParabajo-top-4 {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.HowToCardTop-container:hover .text1 {
+  transition-delay: 0.2s;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+.HowToCardTop-container:hover .text1 {
+  transition-delay: 0.2s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardTop-container:hover .FlechaParabajo-top-1 {
+  transition-delay: 0.7s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardTop-container:hover .text2 {
+  transition-delay: 1.2s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardTop-container:hover .FlechaParabajo-top-2 {
+  transition-delay: 1.7s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.HowToCardTop-container:hover .text3 {
+  transition-delay: 2.2s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardButtom-container:hover .text11 {
+  transition-delay: 0.2s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardButtom-container:hover .FlechaParabajo-top-3{
+  transition-delay: .7s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.HowToCardButtom-container:hover .text22 {
+  transition-delay: 1.3s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardButtom-container:hover .FlechaParabajo-top-4{
+  transition-delay: 1.8s;
+  opacity: 1;
+  visibility: visible;
+}
+.HowToCardButtom-container:hover .text33 {
+  transition-delay: 2.2s;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+.HowTo-button-container:hover {
+  background:#073753;
+
+}
+
+.HowTo-button{
+  display: flex;
+  height: 51px;
+  width: 170px;
+  padding: 0px 38px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: var(--color-background-dark, linear-gradient(0deg, #050E15 0%, #050E15 100%));
+  
+  font-weight: 800;
+  border: none;
+
+}
+.HowTo-button {
+  all: unset;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+  height: 48px;
+  padding: 0px 38px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #023a64);
+  border: none;
+  white-space: nowrap;
+  color: #EDB72D;
+  font-weight: 800;
+  cursor: pointer;
+  width: 74px;
+  
+}
+
+
+
+
+.HowTo-button::after,
+.HowTo-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all 0.4s;
+}
+
+.HowTo-button::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #050e15;
+  border-radius: 10px;
+}
+
+.HowTo-button::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(315deg, #073753 40%, #c78d18 84%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.HowTo-button:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.HowTo-button:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.HowTo-button:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+.HowToCardTop-text{
+  stroke:#050E15; stroke-width:1%;
+} 
+  
+.HowToCardTop-text{
+stroke:#050E15; stroke-width:0.3rem;
+
+}
+.ojoSvg{
+  display: none;
+}
+
+@media (max-width: 1700px){
+  .HowTo-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .HowToCardButtom-container{
+    margin: 0 auto;
+    /* width: 70%; */
+
+  }
+  .text11 {
+    transform: translate(-7%,0%);
+  }
+  .text22 {
+    transform: translate(-3%,0%);
+  }
+  .text33 {
+    transform: translate(20%,0%);
+  }
+  .HowToCardTop-svg-left{
+    position: relative;
+   /* left: 300px;  */
+  }
+  .HowToCardButtom-svg-left{
+    margin-top: 40px;
+  }
+  .HowToCardButtom-svg-right{
+    margin-top: 40px;
+  }
+  .HowToCardTop-svg-right{
+    margin-bottom: 50px;
+  }
+  .HowToCardTop-svg-left{
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 900px){
+  .HowToCardTop-container{
+    width: 95%;
+    margin-bottom: 1rem;
+    
+  }
+  
+  .HowToCardTop-svg-right{
+    width: 54%;
+    margin-bottom: 0;
+    
+  }
+  .HowToCardTop-svg-left{
+    width: 55%;
+    left: calc(50% - 55%);
+    margin-bottom: 0;
+
+  }
+  .HowTo-button-container{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .HowToCardButtom-container{
+    width: 95%;
+    margin: 0 auto;
+    justify-content: space-between ;
+  }
+  .HowToCardButtom-svg-right{
+    width: 54%;
+    right: calc(50% - 55%);
+    margin-top: 0;
+  }
+  .HowTo-button{
+    width: 45px;
+  }
+  .HowToCardButtom-svg-left{
+    width: 54%;
+    margin-top: 0;
+  }
+
+  .HowToCardButtom-container{
+    background-image: url(./assets/Rakdos-Patron-of-Chaos-Murders-at-Karlov-Manor-MtG-Art.jpg);
+
+  }
+  .HowToCardTop-container{
+    background-image: url(./assets/Sword-of-Forge-and-Frontier-Phyrexia-All-Will-Be-One-MtG-Art.jpg);
+  }
+  .HowToCardTop-container:hover{
+    background-size: 170%;
+  }
+  .HowToCardButtom-svg-right {
+    opacity: 1;
+    transform: translateX(0);
+
+  }
+  .HowToCardTop-svg-left{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .text1,.text2,.text3,.text11,.text22,.text33,.FlechaParabajo-top-1,.FlechaParabajo-top-2,.FlechaParabajo-top-3,.FlechaParabajo-top-4 {
+    opacity: 1;
+    visibility: visible;
+    
+  }
+}
+::-webkit-scrollbar {
+  width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0c1e2b; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c78d18 ; 
+  border-radius: 6px; 
+}
+/* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
+/* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
+/* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
+/* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
+/* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
+#root{
+  background-image: linear-gradient(to bottom, #013A64, #050E15);
+}
+
+.CardsStats-container{
+  background-color: #050E15;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+}
+
+.CardsStats-container li {
+  list-style: none;
+ width: 200px;
+ margin: 10px;
+ 
+ 
+}
+.ul-card-container {
+  max-height: 210px; /* Altura máxima para activar la barra de desplazamiento */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ul-card-section {
+  flex: 1;
+}
+
+
+.title-card{
+
+  display: flex;
+  flex-direction: column;
+  font-size: 35px;
+  font-weight: 800;
+  color: #EDB72D;
+  margin-left: 20px;
+}
+.CardsStats-container  p{
+  color: aliceblue;
+  margin-left: 20px;
+
+  
+}
+
+.CardsStatsInfo-container{
+  display: flex;
+    background-color: #050E15;
+    color: #EDB72D;
+    margin-top: 40px;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    
+}
+.table-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+}
+.table-container table{
+  width: 100%;
+  
+}
+
+
+.table-container td{
+  
+  padding: 10px;
+  background-color: #050E15;
+  color: aliceblue;
+  text-align: center;
+  cursor: pointer;
+  margin: 0px;
+  gap: 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+table{
+  border-collapse: unset;
+  border-spacing: 0px;
+}
+.table-container tr td:nth-child(2) {
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+}
+
+
+.table-container td:hover{
+  /* background-color: #013A64; */
+  scale: 0.9;
+  transition: 0.5s;
+}
+th, td {
+  border: 1px solid #050E15; 
+}
+.table-container th{
+  /* display: flex;
+  flex-direction: row;
+  align-items: center; */
+  width: 33.33%;
+  padding: 10px;
+  background-color: #050E15;
+  color: #EDB72D;
+  font-size: 20px;
+  /* border-bottom: #c78d18 1px solid;
+  border-bottom: 2px solid #EDB72D; */
+  padding: 2rem;
+  
+} 
+.table-container th::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid #EDB72D;
+}
+.title-market{
+  font-size: 20px;
+  font-weight: 800;
+  color: #EDB72D;
+  background-color: #091117;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  /* border-bottom: #c78d18 1px solid; */
+  margin-bottom: 40px;
+  margin-top: 40px;
+  height: 30px;
+  width: 220px;
+  border-bottom: 2px solid #EDB72D;
+  
+}
+ a{
+  text-decoration: none; 
+}
+.load-more{
+  /* padding-top: 1rem; */
+  margin-bottom: 40px;
+  margin-top: 40px;
+  height: 30px;
+  width: 110px;
+  border-bottom: 2px solid #EDB72D;
+  
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Opacidad del fondo oscuro */
+  z-index: 999;
+  transition: opacity 0.4s ease; /* Agrega una transición suave */
+}
+
+.overlay.active {
+  opacity: 1; 
+}
+
+.modal-content {
+  max-width: 600px;
+  margin: 0 auto;
+  
+}
+.ReactModal__Content {
+background-color: #013a64;
+border-radius: 20px;
+}
+.legend-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.legend-table th,
+.legend-table td {
+  border: 1px solid #501616;
+  padding: 8px;
+  text-align: left;
+  
+}
+
+.legend-table th {
+  background-color:#050e15 ;
+  color: #c78d18;
+  font-weight: bold;
+}
+
+.legend-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.legend-table tr:hover {
+  background-color: #f2f2f2;
+}
+#th2child  {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 0.5rem;
+  color: #c78d18;
+  cursor: pointer;
+}
+.modal-btn-clouse{
+  margin-left: 30%;
+  margin-top: 10px;
+}
+.back-to-top-button{
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  fill: #c78d18;
+  border-bottom: 2px solid #EDB72D;
+  width: 30px;
+
+  /* color: #EDB72D; */
+}
+.svg-persons{
+  display: flex;
+  left: 0;
+  margin-top: -24px;
+  justify-content: center;
+  align-items: center;
+  /* width: 10%; */
+}
+.svg-state{
+  display: flex;
+  left: 0;
+  margin-top: -24px;
+  justify-content: center;
+  align-items: center;
+}
+.ul-card{
+  color: #f0f0f0;
+  
+}
+.rarity-li{
+  color: #EDB72D;
+}
+
