@@ -2079,9 +2079,7 @@ stroke:#050E15; stroke-width:0.3rem;
   .HowToCardTop-container{
     background-image: url(./assets/Sword-of-Forge-and-Frontier-Phyrexia-All-Will-Be-One-MtG-Art.jpg);
   }
-  .HowToCardTop-container:hover{
-    background-size: 170%;
-  }
+  
   .HowToCardButtom-svg-right {
     opacity: 1;
     transform: translateX(0);
@@ -2367,3 +2365,6 @@ border-radius: 20px;
   color: #EDB72D;
 }
 
+.on-sale-section img:hover {
+transform: scale(1.2);
+}
