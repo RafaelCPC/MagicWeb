@@ -2101,15 +2101,15 @@ stroke:#050E15; stroke-width:0.3rem;
   }
 }
 ::-webkit-scrollbar {
-  width: 12px; 
+  width: 7px; 
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #0c1e2b; 
+  background-color: #4c5257
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #c78d18 ; 
+  background-color: #f4d415;
   border-radius: 6px; 
 }
 /* STATS CARD DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD */
