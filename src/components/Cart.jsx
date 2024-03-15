@@ -66,7 +66,7 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 					})}
 				</ul>
 			<div>
-				<Boton className="LoginFooterBar-button" text={"Continue Shopping"}/>
+				<Boton className="LoginFooterBar-button" text={"Continue Shopping"} callback={()=>setOpen()} isDisabled={false}/>
 				<Boton className="LoginFooterBar-button" text={"Checkout"}/>
 			</div>
 			</div>
