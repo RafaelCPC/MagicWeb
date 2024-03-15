@@ -1,9 +1,9 @@
  
-function Lists({content=[]}) {
+function Lists({content=[],className}) {
   return (
     content.map((item,index)=>{
       return(
-      <div className="ListOfLists" key={index}>{item}</div>
+      <div className={className} key={index}>{item}</div>
     )})
   )
 }

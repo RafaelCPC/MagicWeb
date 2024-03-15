@@ -4,13 +4,13 @@ import HowToCardTop from "./HowToCardTop"
 // import HowTocardLong from "./HowTocardLong"
 
 
-function HowTo() {
+function HowTo({callbacks}) {
 
   return (
     <section className="HowTo-container">
         <HowToCardTop />
         <div className="HowTo-button-container">
-            <Boton className={"HowTo-button"} callback={() => handleFuction()} text="Sign Up" isDisabled={false}/>
+            <Boton className={"HowTo-button"} callback={()=>callbacks()} text="Sign Up" isDisabled={false}/>
         </div>
         <HowToCardButtom />
         {/* <HowTocardLong /> */}

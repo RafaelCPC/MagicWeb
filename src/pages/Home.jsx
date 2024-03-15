@@ -1,14 +1,15 @@
-
+import MainContent from '../components/MainContent'
+import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import HowTo from '../components/HowTo'
+import { initNotifications, initContentCart } from "../components/NavbarData"
 
-import '../index.css'
-function Home() {
+function Home({states,callbacks,numberOfCartItems,numberOfNotifications}) {
+
   return (
     <>
-    
-    <HowTo/>
-    <Footer/>
+      <Navbar states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems} initContentCart={initContentCart} initNotifications={initNotifications}/>
+      {states.isMainContent && <MainContent states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems}/>}
+      <Footer callbacks={()=>{callbacks.setMessageIcon(prev=>{return({...prev,["isUser"]:true})})}}/>
     </>
   )
 }

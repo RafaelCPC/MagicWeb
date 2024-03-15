@@ -19,7 +19,7 @@ function Explore() {
       {exploreCategories.map((category) => (
         <li key={category.id} className="Explore-category">
           <h3>{category.name} <span className="Arrow">&#9662;</span></h3>
-          <Lists content={category.content} />
+          <Lists content={category.content} className={"ListOfLists"}/>
         </li>
       ))}
     </ul>
