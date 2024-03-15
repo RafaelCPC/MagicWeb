@@ -4,8 +4,6 @@ import Lists from "./Lists"
 
 function Explore({states,callback}) {
 
-    console.log(callback)
-
     const exploreCategories=[
         {name: "Formats",
         id:"NavCat1",
