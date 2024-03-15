@@ -36,12 +36,12 @@ function OpenPopUps({states,callbacks,numberOfNotifications,numberOfCartItems}) 
     {states.isExplore && <Explore states={states} callback={callbacks}/>}
     
     {states.isUserLoggedIn? (states.isMessageIcon.isNotifications ) && <NavbarPopUp className="popup notifications-popup" content={[`You have ${numberOfNotifications?numberOfNotifications:"no"} unread notifications!`,<Boton text={"See Notifications"} callback={()=>handleOpenSection("openNotifications")}/>]} onClick={(e)=>e.stopPropagation()}/>:
-      states.isMessageIcon.isNotifications && <NavbarPopUp className="popup user-popup" content={[<Boton text={"Sign in"} callback={()=>handleOpenSection("openLogIn")}/>,"Not Registered?",<Boton text={"Sign Up"} callback={()=>handleOpenSection("openRegistration")}/>]} onClick={(e)=>e.stopPropagation()}/>}
+      states.isMessageIcon.isNotifications && <NavbarPopUp className="popup user-popup" content={[<Boton text={"Sign in!"} callback={()=>handleOpenSection("openLogIn")}/>,"Not Registered?",<Boton text={"Sign Up!"} callback={()=>handleOpenSection("openRegistration")}/>]} onClick={(e)=>e.stopPropagation()}/>}
     
     {states.isUserLoggedIn? (states.isMessageIcon.isCart ) && <NavbarPopUp className="popup cart-popup" content={[`You have ${numberOfCartItems?numberOfCartItems:"no"} items in your Cart!`,<Boton text={"See Cart"} callback={()=>handleOpenSection("openCart")}/>]} onClick={(e)=>e.stopPropagation()}/>:
-      states.isMessageIcon.isCart && <NavbarPopUp className="popup user-popup" content={[<Boton text={"Sign in"} callback={()=>handleOpenSection("openLogIn")}/>,"Not Registered?",<Boton text={"Sign Up"} callback={()=>handleOpenSection("openRegistration")}/>]} onClick={(e)=>e.stopPropagation()}/>}
+      states.isMessageIcon.isCart && <NavbarPopUp className="popup user-popup" content={[<Boton text={"Sign in!"} callback={()=>handleOpenSection("openLogIn")}/>,"Not Registered?",<Boton text={"Sign Up!"} callback={()=>handleOpenSection("openRegistration")}/>]} onClick={(e)=>e.stopPropagation()}/>}
     
-    {(states.isMessageIcon.isUser && !(states.isSectionOpen.openLogIn||states.isSectionOpen.openRegistration)) && <NavbarPopUp className="popup user-popup" content={[<Boton text={"Sign in"} callback={()=>handleOpenSection("openLogIn")}/>,"Not Registered?",<Boton text={"Sign Up"} callback={()=>handleOpenSection("openRegistration")}/>]} onClick={(e)=>e.stopPropagation()}/>}
+    {(states.isMessageIcon.isUser && !(states.isSectionOpen.openLogIn||states.isSectionOpen.openRegistration)) && <NavbarPopUp className="popup user-popup" content={[<Boton text={"Sign in!"} callback={()=>handleOpenSection("openLogIn")}/>,"Not Registered?",<Boton text={"Sign Up!"} callback={()=>handleOpenSection("openRegistration")}/>]} onClick={(e)=>e.stopPropagation()}/>}
   </div>
   )
 }
