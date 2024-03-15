@@ -4,6 +4,7 @@ import Lists from "./Lists";
 import CloseIcon from "./CloseIcon";
 import DeleteIcon from "./DeleteIcon";
 import ManaSvg from "./ManaSvg";
+import { Link } from "react-router-dom";
 
 
 function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
@@ -66,7 +67,7 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 					})}
 				</ul>
 			<div>
-				<Boton className="LoginFooterBar-button" text={"Continue Shopping"}/>
+				<Boton className="LoginFooterBar-button" text={<Link to={"/"}>"Continue Shopping"</Link>}/>
 				<Boton className="LoginFooterBar-button" text={"Checkout"}/>
 			</div>
 			</div>
