@@ -12,7 +12,7 @@ function OnSaleProducts({ states, callbacks }) {
   return (
     <>
       <ShowProducts className={"on-sale-section"} cardsArray={onSale} title={"Explore the newest on-sale products"} callbackProduct={onAddToCart} text={<Link to="/explore">Explore for more</Link>}/>
-      <Boton text={<Link to="/explore">Explore for more</Link>}/>
+      <Boton className="LoginFooterBar-button" text={<Link to="/explore">Explore for more</Link>}/>
     </>
   );
 }
