@@ -1302,6 +1302,11 @@ button{
     .explore-button-active {
         margin-bottom: -5px;
     }
+    .cart-overlay>div>div:last-child{
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 10px;
+    }
 
 }
 
