@@ -15,7 +15,7 @@ function Navbar({states,callbacks,initContentCart,initNotifications,numberOfCart
           <Logo height={42} />
         </div>
         <NavbarSearch onExplore={callbacks}/>
-        <NavbarIcons stateIcons={states.isMessageIcon} onIconsClick={(stateIcons)=>{return (callbacks.setIsExplore(false),callbacks.setMessageIcon(stateIcons))}} userLogged={states.isUserLoggedIn}/>
+        <NavbarIcons numberOfCartItems={numberOfCartItems} numberOfNotifications={numberOfNotifications} stateIcons={states.isMessageIcon} onIconsClick={(stateIcons)=>{return (callbacks.setIsExplore(false),callbacks.setMessageIcon(stateIcons))}} userLogged={states.isUserLoggedIn}/>
       </div>
 
       <OpenPopUps states={states} callbacks={callbacks} numberOfNotifications={numberOfNotifications} numberOfCartItems={numberOfCartItems}/>
