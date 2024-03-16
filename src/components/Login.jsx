@@ -3,6 +3,7 @@ import Boton from "./Boton"
 import Inputs from "./Inputs"
 import CloseIcon from "./CloseIcon"
 import ManaSvg from "./ManaSvg"
+import GoogleApi from './GoogleApi'
 
 function Login({isOpen,setOpen,logged}) {
 
@@ -41,6 +42,7 @@ function Login({isOpen,setOpen,logged}) {
                     <Inputs labelText={"Password"} name={"password"} type="password" dataInput={newUserData.password} handler={handleUserData}/>
                     <Boton className="LoginFooterBar-button" callback={()=>handleClickSubmitForm()} text="Log-in" isDisabled={!newUserData.email}/>
                 </form>
+                <GoogleApi />
             </div>
         </div>
         <ManaSvg/>

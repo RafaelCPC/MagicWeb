@@ -48,7 +48,6 @@ button{
     background-color: transparent;
     border: none;
     color: var(--color-texto-secundario);
-    display: flex;
     align-content: center;
     flex-wrap: wrap;
 }
@@ -2469,7 +2468,8 @@ height: 5px;
     width: 680px;
     height: 500px;
     overflow: hidden;
-    padding-top: 20px;
+    padding-top: 60px;
+    gap: 15px;
 }
 .title_top{
     /*
@@ -2503,7 +2503,7 @@ height: 5px;
     border-bottom: 2px white solid;
     border-top: 2px white solid;
     border-radius: 20px;
-    padding-right: 40px;
+    padding: 0 40px;
     max-width: 580px;
     overflow: hidden;
 }
@@ -2564,7 +2564,7 @@ height: 5px;
     border-radius: 20px;
 }
 .card_box:hover, .card_box:focus{
-    color: white;
+    color: var(--background-color-dark);
 }
 .card{
     width: 280px;
