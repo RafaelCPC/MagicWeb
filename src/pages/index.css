@@ -2376,7 +2376,10 @@ transform: scale(1.2);
 body{
     margin:0;
 }
-
+:root{
+    --clr-neon:#97eb57;
+    --clr-bg: #001414;
+}
 
 .App {
     display: flex;
@@ -2421,28 +2424,35 @@ body{
     transition: transform 0.3;
 }
 .text_card{
+    max-width: 100px;
     min-width: 100px;
+    white-space: nowrap;
 }
+
 .indicators{
     display: flex;
     justify-content: center;
     position: relative;
-    top: 490px;
-    right: 440px;
-    height: 20px;
-    
+    top: 480px;
+    right: 430px;
+    height: 8px;
+    min-width: 50px;
+    overflow: hidden;
+    border-radius: 20px;
 }
 .button_indicator{
-    width: 12px;
-    height: 6px;
+    overflow: hidden;
+    width: 20px;
+    height: 15px;
     border-style: none;
-    margin: 2px;
+    opacity: 0.6;
 }
 .active{
     animation: banner_ind;
     animation-duration: 3000ms;
     animation-iteration-count: infinite;
     border-style: none;
+    opacity: 1;
 }
 @keyframes banner_ind {
     from {background-color: #8f8c8c;}
@@ -2462,16 +2472,28 @@ height: 5px;
     padding-top: 20px;
 }
 .title_top{
+    /*
     color: white;
     border: 1px solid black;
     border-bottom: 2px white solid;
     border-radius: 20px;
     background-image: linear-gradient(to right, rgb(36, 21, 103), rgb(18, 8, 59));
+     */
     min-height: 30px;
     width: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: var(--clr-neon) 0.125em solid;
+    border-radius: 20px;
+    padding: 0.25em 1em;
+    text-shadow: 
+    0 0 .20em #FFF7,
+    0 0 .30em var(--clr-neon);
+    color: var(--clr-neon);
+    box-shadow: 
+    inset 0 0 .5 var(--clr-neon),
+    0 0 .5 var(--clr-neon);
 }
 .price_list{
     display: flex;
@@ -2486,17 +2508,63 @@ height: 5px;
     overflow: hidden;
 }
 .card_box {
-    color: white;
+   /* color: white;
     background-color: rgb(36, 21, 103);
+    */
+    background-color: inherit;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 500px;
-    height: 500px;
     height: 40px;
     margin: 2px;
+    border: var(--clr-neon) 0.125em solid;
+    border-radius: 20px;
+    padding: 0.25em 1em;
+
+    color: var(--clr-neon);
+
+    cursor: pointer;
+}
+.card_box::before{
+    position: absolute;
+    top: 140%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-neon);
+    transform: 
+        perspective(0.2em)
+        rotateX(10deg)
+        scale(1.3,0.4)
+    ;
+    filter: blur(0.5em);
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 100ms linear ;
+}
+.card_box::after{
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--clr-neon);
+    
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    transition: opacity 100ms linear ;
+    border-radius: 20px;
+}
+.card_box:hover::after{
+    opacity: 1;
+    border-radius: 20px;
+}
+.card_box:hover, .card_box:focus{
+    color: white;
 }
 .card{
     width: 280px;
@@ -2511,9 +2579,8 @@ height: 5px;
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 0px;
+    left: -100px;
     top: 650px;
-    z-index: 3;
     height: 0px;
     border-radius: 20px;
     overflow: hidden;
@@ -2525,12 +2592,14 @@ height: 5px;
     border-style: none;
     max-height: 200px;
     transition: transform 0.3;
-}
+} /*
 .top_box:hover .card_hover{
     width: 280px;
     height: 350px;
+    position: absolute;
+    top: 0px;  
     border: black 1px solid;
-}
+} */
 .arrowUp_button {
     background-color: inherit;
     border-style: none;
@@ -2546,9 +2615,27 @@ height: 5px;
     bottom: 50px;
 }
 .arrow_svg{
-
-    fill: rgb(36, 21, 103);
+    fill: var(--clr-neon);
     width: 50px;
     height: 50px;
     background-color: inherit;
+    cursor: pointer;
+    border-radius: 25px;
+    
+}
+
+.arrowUp_button:hover{
+    animation: animate 1s linear infinite;
+}
+@keyframes animate{
+    0%{
+        fill: #70f2f7;
+    };
+    50%{
+        fill: #07383a;
+    }
+}
+.userLogin {
+    color: white;
+    width: 200px;
 }
