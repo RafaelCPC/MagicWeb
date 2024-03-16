@@ -727,6 +727,11 @@ button{
     margin-bottom: 30px;
 }
 
+.section-main-content>button{
+  border: 2px solid #004172;
+}
+
+
 .on-sale-section{
     display: flex;
     flex-direction: column;
@@ -871,6 +876,7 @@ button{
     padding: 5px;
     border-radius: 0.5rem;
     z-index: 10;
+    display: flex;
 }
 
 .back-to-top-button:hover{
