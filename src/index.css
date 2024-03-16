@@ -865,7 +865,6 @@ button{
 .explore-cards ul>li{
     width: 180px;
     justify-content: center;
-    z-index: -1000;
     animation: visibility-div 300ms ease 0ms;
 }
 .back-to-top-button{
