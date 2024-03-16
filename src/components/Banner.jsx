@@ -59,7 +59,8 @@ const Banner = () => {
                 <button className={`button_indicator ${index === currentIndex ? "active": ""}`} 
                 onClick={()=>goToSlide(index)}
                 key={index} 
-                ></button>
+                > 
+                </button>
               )
             })
           }
