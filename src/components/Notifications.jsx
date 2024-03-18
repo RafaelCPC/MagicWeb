@@ -36,7 +36,7 @@ function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications})
 
   return (
     isOpen && <>
-    <div className="sections-overlay notifications-menu">
+    <div className="sections-overlay notifications-menu" onClick={()=>setOpen()}>
         <div>
             <div>
                 <h3>Notifications</h3>

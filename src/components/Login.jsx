@@ -31,7 +31,7 @@ function Login({isOpen,setOpen,logged}) {
     return (
         isOpen && 
         <>
-        <div className="sections-overlay registration-overlay">
+        <div className="sections-overlay registration-overlay" onClick={()=>setOpen()}>
             <div>
                 <div>
                    <h3>Sign In</h3>

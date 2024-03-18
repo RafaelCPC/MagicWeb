@@ -40,7 +40,7 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 
   return (
     isOpen && <>
-		<div className="sections-overlay cart-overlay">
+		<div className="sections-overlay cart-overlay" onClick={()=>setOpen()}>
 			<div>
 				<div>
 					<h3>Your Cart</h3>

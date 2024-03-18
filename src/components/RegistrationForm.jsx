@@ -29,7 +29,7 @@ function RegistrationForm({isOpen,setOpen}) {
   return (
     isOpen && 
     <>
-      <div className="sections-overlay registration-overlay">
+      <div className="sections-overlay registration-overlay" onClick={()=>setOpen()}>
         <div>
           <div>
             <h3>Sign Up</h3>
