@@ -30,7 +30,7 @@ function RegistrationForm({isOpen,setOpen}) {
     isOpen && 
     <>
       <div className="sections-overlay registration-overlay" onClick={()=>setOpen()}>
-        <div>
+        <div onClick={(event)=>event.stopPropagation()}>
           <div>
             <h3>Sign Up</h3>
             <Boton text={<CloseIcon/>} callback={()=>{setOpen()}} isDisabled={false}/>

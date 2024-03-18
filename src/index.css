@@ -56,6 +56,7 @@ button{
     width: 100%;
     position: fixed;
     z-index: 99999;
+    animation: visibility-div 400ms ease 0ms;
 }
 
 .navbar{
@@ -1400,6 +1401,7 @@ button{
   color: antiquewhite;
   padding-bottom: 2rem;
   padding-top: 3rem;
+  animation: visibility-div 400ms ease 0ms;
 }
 .LoginFooterBar {
   display: flex;
