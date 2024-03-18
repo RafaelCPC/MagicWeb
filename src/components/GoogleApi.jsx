@@ -6,6 +6,7 @@ function GoogleApi({callbacks}){
 
 
     const [user, setUser] = useState({});
+    
     function handleCallbackResponse(response){
         callbacks()       
         const userObject = jwtDecode(response.credential)
