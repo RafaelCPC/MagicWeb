@@ -2413,7 +2413,7 @@ body{
    
 }
 .img_banner{
-    width: 900px;
+    width: 850px;
     height: 500px;
     border-radius: 20px;
     padding-right: 40px;
@@ -2454,6 +2454,7 @@ body{
     min-width: 50px;
     overflow: hidden;
     border-radius: 20px;
+    border: white 1px solid;
 }
 .button_indicator{
     overflow: hidden;
@@ -2616,6 +2617,72 @@ height: 5px;
     top: 0px;  
     border: black 1px solid;
 } */
+@media (width < 700px){
+  .arrowUp_button {
+    background-color: inherit;
+    border-style: none;
+    position: relative;
+    right:  30px;
+    bottom: 0px;
+}
+.arrowDown_button {
+    background-color: inherit;
+    border-style: none;
+    position: relative;
+    left: 30px;
+    bottom: 0px;
+}
+.img_group_mob{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  transition: transform 0.3;
+}
+.img_group{
+  display: none;
+}
+.Carousel{
+  max-width: 550px;
+  height: 730px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+ 
+}
+.img_banner{
+  width: 489px;
+  height: 730px;
+  border-radius: 20px;
+  padding-right: 40px;
+}
+.inner{
+  position: relative;
+  transition: transform 0.3s;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.container-images{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.indicators{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 700px;
+  right: 270px;
+  height: 8px;
+  min-width: 50px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: white 1px solid;
+}
+}
+@media (width > 700px){
 .arrowUp_button {
     background-color: inherit;
     border-style: none;
@@ -2630,6 +2697,11 @@ height: 5px;
     left: 275px;
     bottom: 50px;
 }
+.img_group_mob{
+  display: none;
+}
+}
+
 .arrow_svg{
     fill: var(--clr-neon);
     width: 50px;
