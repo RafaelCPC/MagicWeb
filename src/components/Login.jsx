@@ -31,8 +31,8 @@ function Login({isOpen,setOpen,logged}) {
     return (
         isOpen && 
         <>
-        <div className="sections-overlay registration-overlay">
-            <div>
+        <div className="sections-overlay registration-overlay" onClick={()=>setOpen()}>
+            <div onClick={(event)=>event.stopPropagation()}>
                 <div>
                    <h3>Sign In</h3>
                     <Boton text={<CloseIcon/>} callback={()=>{setOpen()}} isDisabled={false}/> 
@@ -42,7 +42,9 @@ function Login({isOpen,setOpen,logged}) {
                     <Inputs labelText={"Password"} name={"password"} type="password" dataInput={newUserData.password} handler={handleUserData}/>
                     <Boton className="LoginFooterBar-button" callback={()=>handleClickSubmitForm()} text="Log-in" isDisabled={!newUserData.email}/>
                 </form>
-                <GoogleApi />
+                <GoogleApi callbacks={()=>{logged();
+                    localStorage.setItem("userLogged", JSON.stringify(true));
+                    setOpen()}}/>
             </div>
         </div>
         <ManaSvg/>

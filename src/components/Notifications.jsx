@@ -5,6 +5,7 @@ import NotificationRead from "./NotificationRead"
 import DeleteIcon from "./DeleteIcon"
 import CloseIcon from "./CloseIcon"
 import ManaSvg from "./ManaSvg"
+import { event } from "jquery"
 
 function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications}) {
 
@@ -36,8 +37,8 @@ function Notifications({isOpen,setOpen,setTotalNotifications,initNotifications})
 
   return (
     isOpen && <>
-    <div className="sections-overlay notifications-menu">
-        <div>
+    <div className="sections-overlay notifications-menu" onClick={()=>setOpen()}>
+        <div onClick={(event)=>event.stopPropagation()}>
             <div>
                 <h3>Notifications</h3>
                 <Boton text={<CloseIcon/>} callback={()=>setOpen()} isDisabled={false}/>

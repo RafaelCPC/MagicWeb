@@ -13,6 +13,9 @@ function Menu({isOpen,setOpen,logOut}) {
     {id:"item4",nombreItem:"My Wallet",subItems:["Earnings","Pending","History"]},
   ]
 
+  const googleApiUser=localStorage.getItem("usuario")
+  const googleApiUserImg=localStorage.getItem("usuarioImg")
+
   const [openSubMenu,setOpenSubMenu] = useState(false)
   const [classClose, setClassClose] = useState("")
 
@@ -31,8 +34,8 @@ function Menu({isOpen,setOpen,logOut}) {
     <div className={"user-menu "+ classClose}>
         <Boton Boton text={<CloseIcon/>} callback={()=>{return(closingMenu())}} isDisabled={false}/>
         <div className="user-menu-photo">
-          <img src="src\assets\User.png" alt="foto usuario" width={150}/>
-          <h3>Jace Beleren</h3>
+        <img src="src\assets\User.png" alt="foto usuario" width={150}/>
+          <h3>{googleApiUser?googleApiUser:`Jace Beleren`}</h3>
         </div>
         <div className="user-menu-content">
           <ul>

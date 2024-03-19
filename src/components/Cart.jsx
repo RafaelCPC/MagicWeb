@@ -40,8 +40,8 @@ function Cart({ isOpen, setOpen,setTotalCart,initContentCart }) {
 
   return (
     isOpen && <>
-		<div className="sections-overlay cart-overlay">
-			<div>
+		<div className="sections-overlay cart-overlay" onClick={()=>setOpen()}>
+			<div onClick={(event)=>event.stopPropagation()}>
 				<div>
 					<h3>Your Cart</h3>
 					<Boton text={<CloseIcon/>} callback={()=>setOpen()} isDisabled={false} />

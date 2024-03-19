@@ -56,6 +56,7 @@ button{
     width: 100%;
     position: fixed;
     z-index: 99999;
+    animation: visibility-div 400ms ease 0ms;
 }
 
 .navbar{
@@ -86,6 +87,7 @@ button{
     align-items: center;
     gap: 10px;
     flex: 1 0 0;
+    z-index: 99;
 }
 
 .form-navbar{
@@ -727,6 +729,11 @@ button{
     margin-bottom: 30px;
 }
 
+.section-main-content>button{
+  border: 2px solid #004172;
+}
+
+
 .on-sale-section{
     display: flex;
     flex-direction: column;
@@ -770,7 +777,7 @@ button{
 }
 
 .on-sale-section>ul>li>div{
-    height: 60%;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -820,20 +827,22 @@ button{
 }
 
 .add-to-cart{
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    
 }
 
 .add-to-cart:hover{
-    background-color: var(--background-color-dark);
+    background-color: var(--color-elementos-1);
 }
 
 .add-to-cart>svg{
-    width: 20px;
+    width: 28px;
+    animation: visibility-div 500ms ease 0ms;
 }
 
 .explore-cards{
@@ -860,7 +869,6 @@ button{
 .explore-cards ul>li{
     width: 180px;
     justify-content: center;
-    z-index: -1000;
     animation: visibility-div 300ms ease 0ms;
 }
 .back-to-top-button{
@@ -871,6 +879,7 @@ button{
     padding: 5px;
     border-radius: 0.5rem;
     z-index: 10;
+    display: flex;
 }
 
 .back-to-top-button:hover{
@@ -1148,6 +1157,9 @@ button{
     .logo-navbar {
         width: 55px;
     }
+    .logo:hover{
+      transform: scale(1.0);
+    }
 
     .search-explore-container {
         height: calc(100vh - 200px);
@@ -1376,6 +1388,9 @@ button{
   font-weight: 400;
   line-height: normal;
 }
+.logo{
+  z-index: 0;
+}
 .logo:hover {
   transform: scale(1.1);
 }
@@ -1386,6 +1401,7 @@ button{
   color: antiquewhite;
   padding-bottom: 2rem;
   padding-top: 3rem;
+  animation: visibility-div 400ms ease 0ms;
 }
 .LoginFooterBar {
   display: flex;

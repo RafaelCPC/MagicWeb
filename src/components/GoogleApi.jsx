@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import {jwtDecode} from "jwt-decode";
-function GoogleApi(){
+
+
+function GoogleApi({callbacks}){
+
+
     const [user, setUser] = useState({});
+    
     function handleCallbackResponse(response){
-        console.log("Encoded JWT ID token: "+ response.credential)
+        callbacks()       
         const userObject = jwtDecode(response.credential)
-        console.log(userObject);
         setUser(userObject);
         localStorage.setItem("usuario", userObject.name)
         localStorage.setItem("usuarioImg", userObject.picture)
@@ -33,17 +37,7 @@ function GoogleApi(){
     return(
         <div>
             <div id="signInDiv"> </div>
-            { Object.keys(user).length != 0 &&
-                <button onClick={(e) => handleSignOut()}>Sign Out</button>
-            }
-            {user && 
-                <div className="userLogin">
-                    <img src={user.picture}></img>
-                    <h3>{user.name}</h3>
-                    <h3>{user.email}</h3>
-                </div>
-            }
-           
+            
         </div>
     )
 }
