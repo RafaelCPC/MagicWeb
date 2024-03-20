@@ -2134,9 +2134,12 @@ stroke:#050E15; stroke-width:0.3rem;
  
 }
 .ul-card-container {
-  max-height: 210px; /* Altura máxima para activar la barra de desplazamiento */
-  overflow-y: auto;
-  overflow-x: hidden;
+  display: flex;
+  max-height: 100px; 
+  width: 500px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 }
 
 .ul-card-section {
@@ -2162,14 +2165,19 @@ stroke:#050E15; stroke-width:0.3rem;
 
 .CardsStatsInfo-container{
   display: flex;
-    background-color: #050E15;
+    /* background-color: rgba(237, 183, 45, 0.3); */
     color: #EDB72D;
-    margin-top: 40px;
     justify-content: center;
     align-content: space-between;
     align-items: center;
-    
+    box-sizing: border-box;
+    height: 352px;
+    border-radius: 50px;
+    margin: 0 40px;
+    margin-top: 40px;
+    gap: 5rem;
 }
+
 .table-container{
   display: flex;
   flex-direction: column;

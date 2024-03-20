@@ -1,4 +1,5 @@
 import Tabla from "../components/Tabla";
+import ImgB from "./ImgB";
 
 function CardsInfo() {
 
@@ -211,36 +212,9 @@ function CardsInfo() {
               </ul>
             </div>
           </div>
-          <div className="ul-card-container">
-                <div className="ul-card-section">
-                  <ul className="ul-card">
-                  <div className="ul-card-container">
-                <div className="ul-card-section">
-                  <ul className="ul-card">
-                    <li>Rarity: <span className="rarity-li">{card.cards[0].rarity}</span> </li>
-                    <li>Number: <span className="rarity-li">{card.cards[0].number}</span></li>
-                    <li>Power: <span className="rarity-li">{card.cards[0].power}</span></li>
-                    <li>Impress: <span className="rarity-li">{card.cards[0].set}</span></li>
-                    <li>Available Items: <span className="rarity-li">{Math.floor(getRandomNumber(10, 10000))}</span></li>
-                    <li>Price: <span className="rarity-li">{basePrice}</span></li>
-                    <li>Colors: <span className="rarity-li">{card.cards[0].colors.join(" // ")}</span></li>
-                  </ul>
-                </div>
-                <div className="scroll-bar"></div>
-                <div className="ul-card-section">
-                  <ul className="ul-card">
-                    <li>Tendencia de precios:</li>
-                    <li>Average Price 30 days: <span className="rarity-li">{averagePrice30Days}</span></li>
-                    <li>Average Price 7 days: <span className="rarity-li">{averagePrice7Days}</span></li>
-                    <li>Average Price 1 day: <span className="rarity-li">{averagePrice1Day}</span></li>
-                    <li>Historical Max. Price: <span className="rarity-li">{historicalMaxPrice}</span></li>
-                    <li>Historical Min. Price: <span className="rarity-li">{historicalMinPrice}</span></li>
-                  </ul>
-                </div>
-              </div>
-              </ul>
-            </div>
-          </div>
+          <ImgB/>
+          
+          
     
     
     
