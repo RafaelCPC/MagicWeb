@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cards } from "./Cards";
+import { cards1 } from "./Cards";
 export function TopPrices ({title}) { 
 const [currentIndex, setCurrentIndex] = useState(0);
 const scrollToCard = (direction) => {
@@ -10,7 +10,7 @@ const scrollToCard = (direction) => {
         })
     } else {
         
-        if(currentIndex < cards.length-8) {
+        if(currentIndex < cards1.length-8) {
             setCurrentIndex( curr => curr + 3)
         }  else {
             setCurrentIndex(0)
@@ -23,7 +23,7 @@ const scrollToCard = (direction) => {
             <p className="title_top"> {title} </p>
             
                 <ul  className="price_list">
-                {cards.map((card) =>{
+                {cards1.map((card) =>{
                 return (  
                     <li style={{transform: `translateY(-${currentIndex*100}%)`, transition: "0.5s ease-out"}} className="top_box" key={card.id}> 
                         <div className="card_hover" > <img className="card" src={card.card} /> </div>

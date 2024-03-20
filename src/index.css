@@ -2486,6 +2486,18 @@ body{
 width: 15px;
 height: 5px;
 }
+
+.top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.prices_text{
+  font-size: 200%;
+  border-bottom: 1px solid var(--clr-neon);
+  color: var(--clr-neon);
+  white-space: nowrap;
+}
 .top_prices{
     display: flex;
     flex-direction: column;
@@ -2625,7 +2637,13 @@ height: 5px;
     top: 0px;  
     border: black 1px solid;
 } */
+@media (width < 1000px){ 
+  .top{
+    flex-direction: column;
+  }
+}
 @media (width < 700px){
+
   .arrowUp_button {
     background-color: inherit;
     border-style: none;
