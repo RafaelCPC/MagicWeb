@@ -1,4 +1,4 @@
-const cards = [
+const cards1 = [
     {
         id: 1,
         card: "src/assets/ganga1.png",
@@ -90,4 +90,4 @@ const cards = [
         price: "0,19 €"
     },
  ]
- export {cards}
+ export {cards1}
