@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cards1 } from "./Cards";
+import { Link } from "react-router-dom";
 export function TopPrices ({title}) { 
 const [currentIndex, setCurrentIndex] = useState(0);
 const scrollToCard = (direction) => {
@@ -28,7 +29,7 @@ const scrollToCard = (direction) => {
                     <li style={{transform: `translateY(-${currentIndex*100}%)`, transition: "0.5s ease-out"}} className="top_box" key={card.id}> 
                         <div className="card_hover" > <img className="card" src={card.card} /> </div>
                         <button className="card_box" >
-                        <p className="text_card"> {card.cardname}</p>
+                        <p className="text_card"><Link to="/cardsinfo"> {card.cardname}</Link></p>
                         <p className="price">{card.price}</p>
                         </button>  
                     </li>)
